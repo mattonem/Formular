@@ -4,7 +4,7 @@ public class Soustraction extends Operation {
 
 	@Override
 	public int result() {
-		return left - right;
+		return left.result() - right.result();
 	}
 
 }

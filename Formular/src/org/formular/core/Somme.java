@@ -4,7 +4,7 @@ public class Somme extends Operation {
 
 	@Override
 	public int result() {
-		return right + left;
+		return right.result() + left.result();
 	}
 
 }
