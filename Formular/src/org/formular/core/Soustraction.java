@@ -1,6 +1,6 @@
 package org.formular.core;
 
-public class Soustraction extends Operation {
+public class Soustraction extends OperationComposition {
 
 	@Override
 	public int result() {

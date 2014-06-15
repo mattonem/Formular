@@ -1,6 +1,6 @@
 package org.formular.core;
 
-public class Somme extends Operation {
+public class Somme extends OperationComposition {
 
 	@Override
 	public int result() {
