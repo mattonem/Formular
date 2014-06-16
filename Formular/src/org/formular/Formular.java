@@ -2,17 +2,12 @@ package org.formular;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class Formular extends Activity {
 
@@ -70,17 +65,6 @@ public class Formular extends Activity {
         	getFragmentManager().beginTransaction().add(R.id.cards_layout, new CardFragment(),"frag2").commit();
         	getFragmentManager().beginTransaction().add(R.id.cards_layout, new CardFragment(),"frag3").commit();
         	getFragmentManager().beginTransaction().add(R.id.cards_layout, new CardFragment(),"frag4").commit();
-//        	Button view = (Button) getActivity().getLayoutInflater().inflate(R.layout.card, null);
-//            view.setText("coucou");
-//			layout.addView(view);
-//			view.setOnClickListener(new View.OnClickListener() {
-//				
-//				@Override
-//				public void onClick(View v) {
-//					Log.d("test", "coucou");
-//					
-//				}
-//			});
         	super.onActivityCreated(savedInstanceState);
         }
     }
