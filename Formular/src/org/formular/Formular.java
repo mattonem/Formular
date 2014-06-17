@@ -1,5 +1,8 @@
 package org.formular;
 
+import org.formular.core.Operation;
+import org.formular.core.Somme;
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -10,15 +13,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class Formular extends Activity {
-
+	
+	Operation ope;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formular);
-
+        
         if (savedInstanceState == null) {
+        	Bundle operationBundle = new Bundle();
+        	ope = new Somme();
+        	operationBundle.putSerializable("operation", ope);
+        	Fragment fragment = new PlaceholderFragment();
+        	fragment.setArguments(operationBundle);
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
+                    .add(R.id.container, fragment)
                     .commit();
         }
     }
@@ -61,10 +70,9 @@ public class Formular extends Activity {
         
         @Override
         public void onActivityCreated(Bundle savedInstanceState) {
-        	getFragmentManager().beginTransaction().add(R.id.cards_layout, new CardFragment(),"frag1").commit();
-        	getFragmentManager().beginTransaction().add(R.id.cards_layout, new CardFragment(),"frag2").commit();
-        	getFragmentManager().beginTransaction().add(R.id.cards_layout, new CardFragment(),"frag3").commit();
-        	getFragmentManager().beginTransaction().add(R.id.cards_layout, new CardFragment(),"frag4").commit();
+        	CardFragment fragment = new OperationAfficheur();
+        	fragment.setArguments(getArguments());
+			getChildFragmentManager().beginTransaction().add(R.id.cards_layout, fragment,"frag1").commit();
         	super.onActivityCreated(savedInstanceState);
         }
     }

@@ -7,16 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-public class CardFragment extends Fragment {
+public abstract class CardFragment extends Fragment {
 	boolean front;
-
+	Fragment frontSide;
+	Fragment backSide;
+		
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		front = true;
 		View rootView = inflater.inflate(R.layout.card, container, false);
 		getChildFragmentManager().beginTransaction()
-				.replace(R.id.card_side, new CardSideFragment()).commit();
+				.replace(R.id.card_side, frontSide).commit();
 		return rootView;
 	}
 
@@ -26,8 +28,8 @@ public class CardFragment extends Fragment {
 		super.onStart();
 	}
 
-	public void prepareFlipButton() {
-		ImageButton flipButton = (ImageButton) getView().findViewById(R.id.button);
+	public void prepareFlipButton(View view) {
+		ImageButton flipButton = (ImageButton) view.findViewById(R.id.flip_button);
 		flipButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -40,11 +42,12 @@ public class CardFragment extends Fragment {
 
 	protected void flipToBack() {
 		front = !front;
+		Fragment newSide = front?frontSide:backSide;
 		getChildFragmentManager()
 				.beginTransaction()
 				.setCustomAnimations(R.anim.card_flip_left_in,
 						R.anim.card_flip_left_out)
-				.replace(R.id.card_side, new CardSideFragment()).commit();
+				.replace(R.id.card_side, newSide).commit();
 	}
 	
 }

@@ -2,6 +2,10 @@ package org.formular.core;
 
 public abstract class OperationComposition extends Operation {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public Operation right;
 	public Operation left;
 	
