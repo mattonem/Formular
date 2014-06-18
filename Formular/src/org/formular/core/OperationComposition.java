@@ -1,5 +1,9 @@
 package org.formular.core;
 
+import java.util.Collection;
+
+import org.formular.CardElement;
+
 public abstract class OperationComposition extends Operation {
 
 	/**
@@ -28,5 +32,12 @@ public abstract class OperationComposition extends Operation {
 	public void left(int i) {
 		left = new OperationIdentique(i);
 		
+	}
+	
+	@Override
+	public Collection <CardElement> inputDescriptions() {
+		Collection<CardElement> inputDescriptions = right.inputDescriptions();
+		inputDescriptions.addAll(left.inputDescriptions());
+		return inputDescriptions;
 	}
 }

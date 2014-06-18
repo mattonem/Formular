@@ -15,15 +15,17 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+
 		View rootView = inflater.inflate(R.layout.card_face, container, false);
 		return rootView;
+
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		((CardFragment) getParentFragment()).prepareFlipButton(getView());
-		
+
 		LinkedList<CardElement> description = (LinkedList<CardElement>) getArguments()
 				.getSerializable("description");
 		if (description != null) {
@@ -41,11 +43,17 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 
 	@Override
 	public void visit(CardText cardText) {
-		LinearLayout layout = (LinearLayout) getView().findViewById(R.id.linear_layout);
+		LinearLayout layout = (LinearLayout) getView().findViewById(
+				R.id.linear_layout);
 		TextView view = new TextView(getActivity());
 		view.setText(cardText.getText());
 		layout.addView(view);
 	}
 
-	
+	@Override
+	public void visit(CardNumberField cardNumberField) {
+		
+
+	}
+
 }

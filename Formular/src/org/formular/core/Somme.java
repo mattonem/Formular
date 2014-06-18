@@ -1,5 +1,6 @@
 package org.formular.core;
 
+
 public class Somme extends OperationComposition {
 
 	/**

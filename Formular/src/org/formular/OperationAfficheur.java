@@ -21,6 +21,7 @@ public class OperationAfficheur extends CardFragment {
 		frontDescription.add(new CardText(Integer.toString(operation.result())));
 		
 		backDescription.add(new CardTitle("Inputs"));
+		backDescription.addAll(operation.inputDescriptions());
 		
 		backArguments.putSerializable("description", backDescription);
 		frontArguments.putSerializable("description", frontDescription);

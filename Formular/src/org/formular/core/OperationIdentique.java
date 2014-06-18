@@ -1,5 +1,12 @@
 package org.formular.core;
 
+import java.util.Collection;
+import java.util.LinkedList;
+
+import org.formular.CardElement;
+import org.formular.CardNumberField;
+import org.formular.CardText;
+
 public class OperationIdentique extends Operation {
 	
 	/**
@@ -15,6 +22,16 @@ public class OperationIdentique extends Operation {
 	@Override
 	public int result() {
 		return value;
+	}
+
+	@Override
+	public Collection<CardElement> inputDescriptions() {
+		
+		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
+		CardNumberField cardNumberField = new CardNumberField();
+		cardNumberField.label("input");
+		inputDescriptions.add(cardNumberField);
+		return inputDescriptions ;
 	}
 
 }

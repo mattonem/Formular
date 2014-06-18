@@ -6,4 +6,6 @@ public interface CardElementVisitor {
 
 	void visit(CardText cardText);
 
+	void visit(CardNumberField cardNumberField);
+
 }
