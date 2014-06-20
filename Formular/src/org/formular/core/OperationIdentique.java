@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import org.formular.card.CardElement;
 import org.formular.card.description.CardField;
 
-public class OperationIdentique extends Operation {
+public class OperationIdentique extends Operation implements Input{
 	
 	/**
 	 * 
@@ -15,6 +15,16 @@ public class OperationIdentique extends Operation {
 	public int value;
 	
 	public OperationIdentique(int i) {
+		value = i;
+	}
+
+	@Override
+	public int getVal() {
+		return value;
+	}
+
+	@Override
+	public void setVal(int i) {
 		value = i;
 	}
 

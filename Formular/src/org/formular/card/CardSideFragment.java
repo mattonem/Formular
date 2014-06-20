@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -57,7 +58,18 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 
 	@Override
 	public void visit(CardField cardNumberField) {
+		LinearLayout layout = new LinearLayout(getActivity());
+		layout.setOrientation(LinearLayout.VERTICAL);
+		LinearLayout rootLayout = (LinearLayout) getView().findViewById(
+				R.id.linear_layout);
+		TextView view = new TextView(getActivity());
+		EditText editText = new EditText(getActivity());
 		
+		view.setText(cardNumberField.getLabel());
+		
+		layout.addView(view);
+		layout.addView(editText);
+		rootLayout.addView(layout);
 
 	}
 
