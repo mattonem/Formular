@@ -37,7 +37,7 @@ public class OperationIdentique extends Operation implements Input{
 	public Collection<CardElement> inputDescriptions() {
 		
 		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
-		CardField cardNumberField = new CardField();
+		CardField cardNumberField = new CardField(this);
 		cardNumberField.label("input");
 		inputDescriptions.add(cardNumberField);
 		return inputDescriptions ;

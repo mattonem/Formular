@@ -64,7 +64,7 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 				R.id.linear_layout);
 		TextView view = new TextView(getActivity());
 		EditText editText = new EditText(getActivity());
-		
+		editText.setText(Integer.toString(cardNumberField.getVal()));
 		view.setText(cardNumberField.getLabel());
 		
 		layout.addView(view);
