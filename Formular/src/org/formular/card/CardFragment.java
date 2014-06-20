@@ -1,4 +1,6 @@
-package org.formular;
+package org.formular.card;
+
+import org.formular.R;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -9,8 +11,8 @@ import android.widget.ImageButton;
 
 public abstract class CardFragment extends Fragment {
 	boolean front;
-	Fragment frontSide;
-	Fragment backSide;
+	protected Fragment frontSide;
+	protected Fragment backSide;
 		
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -2,7 +2,7 @@ package org.formular.core;
 
 import java.util.Collection;
 
-import org.formular.CardElement;
+import org.formular.card.CardElement;
 
 public abstract class OperationComposition extends Operation {
 

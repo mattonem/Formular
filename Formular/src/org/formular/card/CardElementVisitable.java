@@ -1,4 +1,4 @@
-package org.formular;
+package org.formular.card;
 
 public interface CardElementVisitable {
 	

@@ -3,9 +3,8 @@ package org.formular.core;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import org.formular.CardElement;
-import org.formular.CardNumberField;
-import org.formular.CardText;
+import org.formular.card.CardElement;
+import org.formular.card.CardNumberField;
 
 public class OperationIdentique extends Operation {
 	

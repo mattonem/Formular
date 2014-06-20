@@ -3,7 +3,7 @@ package org.formular.core;
 import java.io.Serializable;
 import java.util.Collection;
 
-import org.formular.CardElement;
+import org.formular.card.CardElement;
 
 public abstract class Operation implements Serializable {
 	

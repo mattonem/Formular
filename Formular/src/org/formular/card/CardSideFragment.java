@@ -1,6 +1,8 @@
-package org.formular;
+package org.formular.card;
 
 import java.util.LinkedList;
+
+import org.formular.R;
 
 import android.app.Fragment;
 import android.os.Bundle;

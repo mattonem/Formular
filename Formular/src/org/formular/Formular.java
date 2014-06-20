@@ -1,5 +1,6 @@
 package org.formular;
 
+import org.formular.card.CardFragment;
 import org.formular.core.Operation;
 import org.formular.core.OperationComposition;
 import org.formular.core.Somme;
