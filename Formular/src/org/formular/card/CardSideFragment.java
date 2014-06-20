@@ -3,6 +3,9 @@ package org.formular.card;
 import java.util.LinkedList;
 
 import org.formular.R;
+import org.formular.card.description.CardNumberField;
+import org.formular.card.description.CardText;
+import org.formular.card.description.CardTitle;
 
 import android.app.Fragment;
 import android.os.Bundle;

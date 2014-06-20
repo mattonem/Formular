@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.card.CardElement;
-import org.formular.card.CardNumberField;
+import org.formular.card.description.CardNumberField;
 
 public class OperationIdentique extends Operation {
 	

@@ -5,8 +5,8 @@ import java.util.LinkedList;
 import org.formular.card.CardElement;
 import org.formular.card.CardFragment;
 import org.formular.card.CardSideFragment;
-import org.formular.card.CardText;
-import org.formular.card.CardTitle;
+import org.formular.card.description.CardText;
+import org.formular.card.description.CardTitle;
 import org.formular.core.Operation;
 
 import android.os.Bundle;
