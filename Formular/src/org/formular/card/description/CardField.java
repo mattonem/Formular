@@ -3,7 +3,7 @@ package org.formular.card.description;
 import org.formular.card.CardElement;
 import org.formular.card.CardElementVisitor;
 
-public class CardNumberField extends CardElement {
+public class CardField extends CardElement {
 
 	/**
 	 * 

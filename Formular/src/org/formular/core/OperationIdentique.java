@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.card.CardElement;
-import org.formular.card.description.CardNumberField;
+import org.formular.card.description.CardField;
 
 public class OperationIdentique extends Operation {
 	
@@ -27,7 +27,7 @@ public class OperationIdentique extends Operation {
 	public Collection<CardElement> inputDescriptions() {
 		
 		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
-		CardNumberField cardNumberField = new CardNumberField();
+		CardField cardNumberField = new CardField();
 		cardNumberField.label("input");
 		inputDescriptions.add(cardNumberField);
 		return inputDescriptions ;

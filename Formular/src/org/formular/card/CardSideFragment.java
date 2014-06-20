@@ -3,7 +3,7 @@ package org.formular.card;
 import java.util.LinkedList;
 
 import org.formular.R;
-import org.formular.card.description.CardNumberField;
+import org.formular.card.description.CardField;
 import org.formular.card.description.CardText;
 import org.formular.card.description.CardTitle;
 
@@ -56,7 +56,7 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 	}
 
 	@Override
-	public void visit(CardNumberField cardNumberField) {
+	public void visit(CardField cardNumberField) {
 		
 
 	}
