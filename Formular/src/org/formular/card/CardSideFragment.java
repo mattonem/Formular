@@ -1,11 +1,14 @@
 package org.formular.card;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map.Entry;
 
 import org.formular.R;
 import org.formular.card.description.CardField;
 import org.formular.card.description.CardText;
 import org.formular.card.description.CardTitle;
+import org.formular.core.Input;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -17,11 +20,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class CardSideFragment extends Fragment implements CardElementVisitor {
-
+	
+	
+	protected HashMap<Input, EditText> binding;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-
+		binding = new HashMap<Input, EditText>();
 		View rootView = inflater.inflate(R.layout.card_face, container, false);
 		return rootView;
 
@@ -67,10 +73,23 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 		editText.setText(Integer.toString(cardNumberField.getVal()));
 		view.setText(cardNumberField.getLabel());
 		
+		binding.put(cardNumberField, editText);
+		
 		layout.addView(view);
 		layout.addView(editText);
 		rootLayout.addView(layout);
 
+	}
+	
+	@Override
+	public void onDestroyView() {
+		for (Entry<Input, EditText> entry : binding.entrySet()) {
+			Input input = entry.getKey();
+			EditText editText = entry.getValue();
+			String string = editText.getText().toString();
+			input.setVal(Integer.parseInt(string));
+		}
+		super.onDestroyView();
 	}
 
 }

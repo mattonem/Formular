@@ -23,7 +23,7 @@ public class OperationAfficheur extends CardFragment {
 		LinkedList<CardElement> backDescription = new LinkedList<CardElement>();
 		
 		frontDescription.add(new CardTitle(operation.toString()));
-		frontDescription.add(new CardText(Integer.toString(operation.result())));
+		frontDescription.add(new CardText(operation));
 		
 		backDescription.add(new CardTitle("Inputs"));
 		backDescription.addAll(operation.inputDescriptions());
