@@ -6,6 +6,8 @@ import org.formular.core.Input;
 import org.formular.core.InputController;
 import org.formular.core.OperationIdentique;
 
+import android.text.InputType;
+
 public class CardField extends CardElement implements InputController {
 
 	/**
@@ -54,6 +56,10 @@ public class CardField extends CardElement implements InputController {
 	@Override
 	public String getVal() {
 		return Integer.toString(operation.getVal());
+	}
+
+	public int getType() {
+		return InputType.TYPE_NULL;
 	}
 
 

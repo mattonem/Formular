@@ -12,7 +12,6 @@ import org.formular.core.InputController;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,9 +69,7 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 				R.id.linear_layout);
 		TextView view = new TextView(getActivity());
 		EditText editText = new EditText(getActivity());
-		editText.setInputType(InputType.TYPE_CLASS_NUMBER
-				| InputType.TYPE_NUMBER_FLAG_DECIMAL
-				| InputType.TYPE_NUMBER_FLAG_SIGNED);
+		editText.setInputType(cardNumberField.getType());
 		editText.setText(cardNumberField.getVal());
 		view.setText(cardNumberField.getLabel());
 

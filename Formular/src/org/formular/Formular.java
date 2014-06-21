@@ -28,7 +28,10 @@ public class Formular extends Activity {
 			OperationComposition operation = new Somme();
 			operation.right(1);
 			operation.left(2);
-			ope = operation;
+			OperationComposition operation2 = new Somme();
+			operation2.right(8);
+			operation2.left(operation);
+			ope = operation2;
 			
 			operationBundle.putSerializable("operation", ope);
 			Fragment fragment = new PlaceholderFragment();
