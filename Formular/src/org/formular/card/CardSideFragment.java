@@ -12,6 +12,7 @@ import org.formular.core.InputController;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class CardSideFragment extends Fragment implements CardElementVisitor {
-	
-	
+
 	protected HashMap<InputController, EditText> binding;
-	
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -70,17 +70,20 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 				R.id.linear_layout);
 		TextView view = new TextView(getActivity());
 		EditText editText = new EditText(getActivity());
+		editText.setInputType(InputType.TYPE_CLASS_NUMBER
+				| InputType.TYPE_NUMBER_FLAG_DECIMAL
+				| InputType.TYPE_NUMBER_FLAG_SIGNED);
 		editText.setText(cardNumberField.getVal());
 		view.setText(cardNumberField.getLabel());
-		
+
 		binding.put(cardNumberField, editText);
-		
+
 		layout.addView(view);
 		layout.addView(editText);
 		rootLayout.addView(layout);
 
 	}
-	
+
 	@Override
 	public void onDestroyView() {
 		for (Entry<InputController, EditText> entry : binding.entrySet()) {
