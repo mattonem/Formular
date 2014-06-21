@@ -4,7 +4,8 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.card.CardElement;
-import org.formular.card.description.CardFieldInteger;
+import org.formular.card.description.CardField;
+import org.formular.card.description.CardFieldFloat;
 
 public class OperationIdentique extends Operation implements Input{
 	
@@ -12,24 +13,24 @@ public class OperationIdentique extends Operation implements Input{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public int value;
+	public float value;
 	
-	public OperationIdentique(int i) {
+	public OperationIdentique(float i) {
 		value = i;
 	}
 
 	@Override
-	public int getVal() {
+	public float getVal() {
 		return value;
 	}
 
 	@Override
-	public void setVal(int i) {
+	public void setVal(float i) {
 		value = i;
 	}
 
 	@Override
-	public int result() {
+	public float result() {
 		return value;
 	}
 
@@ -37,7 +38,7 @@ public class OperationIdentique extends Operation implements Input{
 	public Collection<CardElement> inputDescriptions() {
 		
 		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
-		CardFieldInteger cardNumberField = new CardFieldInteger(this);
+		CardField cardNumberField = new CardFieldFloat(this);
 		cardNumberField.label("input");
 		inputDescriptions.add(cardNumberField);
 		return inputDescriptions ;

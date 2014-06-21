@@ -15,7 +15,7 @@ public class CardField extends CardElement implements InputController {
 	 */
 	private static final long serialVersionUID = 1L;
 	private String label;
-	private Input operation;
+	protected Input operation;
 
 	public Input getOperation() {
 		return operation;
@@ -45,17 +45,13 @@ public class CardField extends CardElement implements InputController {
 
 	@Override
 	public void setVal(String string) {
-		try {
-			operation.setVal(Integer.parseInt(string));
-		} catch (NumberFormatException e) {
-			
-		}
+		
 		
 	}
 
 	@Override
 	public String getVal() {
-		return Integer.toString(operation.getVal());
+		return Float.toString(operation.getVal());
 	}
 
 	public int getType() {

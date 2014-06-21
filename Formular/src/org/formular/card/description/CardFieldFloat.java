@@ -4,14 +4,14 @@ import org.formular.core.OperationIdentique;
 
 import android.text.InputType;
 
-public class CardFieldInteger extends CardField {
-
+public class CardFieldFloat extends CardField {
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public CardFieldInteger(OperationIdentique operation) {
+	public CardFieldFloat(OperationIdentique operation) {
 		super(operation);
 	}
 
@@ -23,7 +23,7 @@ public class CardFieldInteger extends CardField {
 	@Override
 	public void setVal(String string) {
 		try {
-			operation.setVal(Integer.parseInt(string));
+			operation.setVal(Float.parseFloat(string));
 		} catch (NumberFormatException e) {
 			
 		}

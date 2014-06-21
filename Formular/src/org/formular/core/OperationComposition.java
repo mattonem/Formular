@@ -24,12 +24,12 @@ public abstract class OperationComposition extends Operation {
 
 	
 
-	public void right(int i) {
+	public void right(float i) {
 		right = new OperationIdentique(i);
 		
 	}
 
-	public void left(int i) {
+	public void left(float i) {
 		left = new OperationIdentique(i);
 		
 	}

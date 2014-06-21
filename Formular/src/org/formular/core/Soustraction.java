@@ -8,7 +8,7 @@ public class Soustraction extends OperationComposition {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public int result() {
+	public float result() {
 		return left.result() - right.result();
 	}
 
