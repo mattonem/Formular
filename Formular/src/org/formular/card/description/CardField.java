@@ -3,9 +3,10 @@ package org.formular.card.description;
 import org.formular.card.CardElement;
 import org.formular.card.CardElementVisitor;
 import org.formular.core.Input;
+import org.formular.core.InputController;
 import org.formular.core.OperationIdentique;
 
-public class CardField extends CardElement implements Input {
+public class CardField extends CardElement implements InputController {
 
 	/**
 	 * 
@@ -41,13 +42,19 @@ public class CardField extends CardElement implements Input {
 	}
 
 	@Override
-	public void setVal(int i) {
-		operation.setVal(i);
+	public void setVal(String string) {
+		try {
+			operation.setVal(Integer.parseInt(string));
+		} catch (NumberFormatException e) {
+			
+		}
+		
 	}
 
 	@Override
-	public int getVal() {
-		return operation.getVal();
+	public String getVal() {
+		return Integer.toString(operation.getVal());
 	}
+
 
 }

@@ -8,7 +8,7 @@ import org.formular.R;
 import org.formular.card.description.CardField;
 import org.formular.card.description.CardText;
 import org.formular.card.description.CardTitle;
-import org.formular.core.Input;
+import org.formular.core.InputController;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -22,12 +22,12 @@ import android.widget.TextView;
 public class CardSideFragment extends Fragment implements CardElementVisitor {
 	
 	
-	protected HashMap<Input, EditText> binding;
+	protected HashMap<InputController, EditText> binding;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		binding = new HashMap<Input, EditText>();
+		binding = new HashMap<InputController, EditText>();
 		View rootView = inflater.inflate(R.layout.card_face, container, false);
 		return rootView;
 
@@ -70,7 +70,7 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 				R.id.linear_layout);
 		TextView view = new TextView(getActivity());
 		EditText editText = new EditText(getActivity());
-		editText.setText(Integer.toString(cardNumberField.getVal()));
+		editText.setText(cardNumberField.getVal());
 		view.setText(cardNumberField.getLabel());
 		
 		binding.put(cardNumberField, editText);
@@ -83,11 +83,11 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 	
 	@Override
 	public void onDestroyView() {
-		for (Entry<Input, EditText> entry : binding.entrySet()) {
-			Input input = entry.getKey();
+		for (Entry<InputController, EditText> entry : binding.entrySet()) {
+			InputController input = entry.getKey();
 			EditText editText = entry.getValue();
 			String string = editText.getText().toString();
-			input.setVal(Integer.parseInt(string));
+			input.setVal(string);
 		}
 		super.onDestroyView();
 	}
