@@ -6,16 +6,15 @@ import org.formular.card.CardElementVisitor;
 
 public class CardTitle extends CardElement {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String title;
 
 	public CardTitle(String title) {
 		this.title = title;
 	}
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	public String getTitle() {
 		return title;

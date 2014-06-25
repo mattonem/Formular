@@ -17,6 +17,10 @@ public class CardField extends CardElement implements InputController {
 	private String label;
 	protected Input operation;
 
+	public CardField(UserParameter operation) {
+		this.operation = operation;
+	}
+
 	public Input getOperation() {
 		return operation;
 	}
@@ -25,16 +29,7 @@ public class CardField extends CardElement implements InputController {
 		this.operation = operation;
 	}
 
-	public CardField(UserParameter operation) {
-		this.operation = operation;
-	}
-
-	@Override
-	public void accept(CardElementVisitor visitor) {
-		visitor.visit(this);
-	}
-
-	public void label(String label) {
+	public void setLabel(String label) {
 		this.label = label;
 		
 	}
@@ -56,6 +51,11 @@ public class CardField extends CardElement implements InputController {
 
 	public int getType() {
 		return InputType.TYPE_NULL;
+	}
+
+	@Override
+	public void accept(CardElementVisitor visitor) {
+		visitor.visit(this);
 	}
 
 

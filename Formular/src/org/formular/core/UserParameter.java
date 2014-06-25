@@ -9,14 +9,14 @@ import org.formular.card.description.CardFieldFloat;
 
 public class UserParameter extends ValueOperation implements Input{
 	
-	public UserParameter(float value) {
-		super(value);
-	}
-
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	public UserParameter(float value) {
+		super(value);
+	}
 
 	@Override
 	public float getVal() {
@@ -33,7 +33,7 @@ public class UserParameter extends ValueOperation implements Input{
 		
 		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
 		CardField cardNumberField = new CardFieldFloat(this);
-		cardNumberField.label("input");
+		cardNumberField.setLabel("input");
 		inputDescriptions.add(cardNumberField);
 		return inputDescriptions ;
 	}

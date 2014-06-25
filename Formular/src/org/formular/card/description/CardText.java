@@ -17,13 +17,13 @@ public class CardText extends CardElement {
 		this.operation = operation;
 	}
 
+	public CharSequence getText() {
+		return ""+operation.result();
+	}
+
 	@Override
 	public void accept(CardElementVisitor visitor) {
 		visitor.visit(this);
-	}
-
-	public CharSequence getText() {
-		return ""+operation.result();
 	}
 
 }
