@@ -1,6 +1,6 @@
 package org.formular.card.description;
 
-import org.formular.core.UserValue;
+import org.formular.core.UserParameter;
 
 import android.text.InputType;
 
@@ -11,7 +11,7 @@ public class CardFieldFloat extends CardField {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public CardFieldFloat(UserValue operation) {
+	public CardFieldFloat(UserParameter operation) {
 		super(operation);
 	}
 

@@ -25,12 +25,12 @@ public abstract class OperationComposition extends Operation {
 	
 
 	public void right(float i) {
-		right = new UserValue(i);
+		right = new UserParameter(i);
 		
 	}
 
 	public void left(float i) {
-		left = new UserValue(i);
+		left = new UserParameter(i);
 		
 	}
 	

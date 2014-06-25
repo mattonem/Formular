@@ -7,9 +7,9 @@ import org.formular.card.CardElement;
 import org.formular.card.description.CardField;
 import org.formular.card.description.CardFieldFloat;
 
-public class UserValue extends ValueOperation implements Input{
+public class UserParameter extends ValueOperation implements Input{
 	
-	public UserValue(float value) {
+	public UserParameter(float value) {
 		super(value);
 	}
 

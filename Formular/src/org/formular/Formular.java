@@ -3,7 +3,7 @@ package org.formular;
 import org.formular.card.CardFragment;
 import org.formular.core.Operation;
 import org.formular.core.OperationComposition;
-import org.formular.core.OperationParameter;
+import org.formular.core.FixedParameter;
 import org.formular.core.Somme;
 
 import android.app.Activity;
@@ -30,7 +30,7 @@ public class Formular extends Activity {
 			operation.right(1);
 			operation.left(2);
 			OperationComposition operation2 = new Somme();
-			operation2.right(new OperationParameter(3));
+			operation2.right(new FixedParameter(3));
 			operation2.left(operation);
 			ope = operation2;
 			

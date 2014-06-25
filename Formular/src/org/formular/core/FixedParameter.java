@@ -5,9 +5,9 @@ import java.util.LinkedList;
 
 import org.formular.card.CardElement;
 
-public class OperationParameter extends ValueOperation {
+public class FixedParameter extends ValueOperation {
 
-	public OperationParameter(float value) {
+	public FixedParameter(float value) {
 		super(value);
 	}
 
