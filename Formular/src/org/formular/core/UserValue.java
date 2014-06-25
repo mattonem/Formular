@@ -7,17 +7,16 @@ import org.formular.card.CardElement;
 import org.formular.card.description.CardField;
 import org.formular.card.description.CardFieldFloat;
 
-public class OperationIdentique extends Operation implements Input{
+public class UserValue extends ValueOperation implements Input{
 	
+	public UserValue(float value) {
+		super(value);
+	}
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public float value;
-	
-	public OperationIdentique(float i) {
-		value = i;
-	}
 
 	@Override
 	public float getVal() {
@@ -27,11 +26,6 @@ public class OperationIdentique extends Operation implements Input{
 	@Override
 	public void setVal(float i) {
 		value = i;
-	}
-
-	@Override
-	public float result() {
-		return value;
 	}
 
 	@Override

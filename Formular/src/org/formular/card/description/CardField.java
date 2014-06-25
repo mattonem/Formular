@@ -4,7 +4,7 @@ import org.formular.card.CardElement;
 import org.formular.card.CardElementVisitor;
 import org.formular.core.Input;
 import org.formular.core.InputController;
-import org.formular.core.OperationIdentique;
+import org.formular.core.UserValue;
 
 import android.text.InputType;
 
@@ -25,7 +25,7 @@ public class CardField extends CardElement implements InputController {
 		this.operation = operation;
 	}
 
-	public CardField(OperationIdentique operation) {
+	public CardField(UserValue operation) {
 		this.operation = operation;
 	}
 
