@@ -14,10 +14,6 @@ public class UserParameter extends ValueOperation implements Input{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public UserParameter(float value) {
-		super(value);
-	}
-
 	@Override
 	public float getVal() {
 		return value;

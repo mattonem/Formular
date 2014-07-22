@@ -5,6 +5,7 @@ import org.formular.core.Operation;
 import org.formular.core.OperationComposition;
 import org.formular.core.FixedParameter;
 import org.formular.core.Somme;
+import org.formular.core.UserParameter;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -27,10 +28,10 @@ public class Formular extends Activity {
 		if (savedInstanceState == null) {
 			Bundle operationBundle = new Bundle();
 			OperationComposition operation = new Somme();
-			operation.right(1);
-			operation.left(2);
+			operation.right(1, FixedParameter.class);
+			operation.left(2, UserParameter.class);
 			OperationComposition operation2 = new Somme();
-			operation2.right(new FixedParameter(3));
+			operation2.right(3, UserParameter.class);
 			operation2.left(operation);
 			ope = operation2;
 			
