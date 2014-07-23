@@ -1,4 +1,4 @@
-package org.formular.core;
+package org.formular.operation;
 
 import java.io.Serializable;
 import java.util.Collection;

@@ -1,14 +1,14 @@
-package org.formular.core;
+package org.formular.operation;
 
 
-public abstract class ValueOperation extends Operation {
+public abstract class ParameterOperation extends Operation {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	public float value;
-	public ValueOperation(){}
+	public ParameterOperation(){}
 	
 	public float getValue() {
 		return value;
@@ -22,7 +22,7 @@ public abstract class ValueOperation extends Operation {
 
 
 
-	public ValueOperation(float value) {
+	public ParameterOperation(float value) {
 		super();
 		this.value = value;
 	}
@@ -34,10 +34,10 @@ public abstract class ValueOperation extends Operation {
 		return value;
 	}
 
-	public static ValueOperation createParameter(float i, Class<?> class1) {
-		ValueOperation newInstance = null;
+	public static ParameterOperation createParameter(float i, Class<?> class1) {
+		ParameterOperation newInstance = null;
 		try {
-			newInstance = (ValueOperation) class1.newInstance();
+			newInstance = (ParameterOperation) class1.newInstance();
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {

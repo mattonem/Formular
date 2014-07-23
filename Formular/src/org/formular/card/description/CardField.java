@@ -4,7 +4,7 @@ import org.formular.card.CardElement;
 import org.formular.card.CardElementVisitor;
 import org.formular.core.Input;
 import org.formular.core.InputController;
-import org.formular.core.UserParameter;
+import org.formular.operation.parameter.UserParameter;
 
 import android.text.InputType;
 

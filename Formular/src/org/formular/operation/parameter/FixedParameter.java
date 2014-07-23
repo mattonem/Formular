@@ -1,11 +1,12 @@
-package org.formular.core;
+package org.formular.operation.parameter;
 
 import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.card.CardElement;
+import org.formular.operation.ParameterOperation;
 
-public class FixedParameter extends ValueOperation {
+public class FixedParameter extends ParameterOperation {
 
 	/**
 	 * 

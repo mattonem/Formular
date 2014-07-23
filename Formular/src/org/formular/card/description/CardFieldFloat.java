@@ -1,6 +1,6 @@
 package org.formular.card.description;
 
-import org.formular.core.UserParameter;
+import org.formular.operation.parameter.UserParameter;
 
 import android.text.InputType;
 

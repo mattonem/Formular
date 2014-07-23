@@ -2,39 +2,39 @@ package org.formular.test;
 
 import junit.framework.Assert;
 
-import org.formular.core.FixedParameter;
-import org.formular.core.OperationComposition;
-import org.formular.core.Somme;
-import org.formular.core.Soustraction;
+import org.formular.operation.BinaryOperation;
+import org.formular.operation.binary.Somme;
+import org.formular.operation.binary.Soustraction;
+import org.formular.operation.parameter.FixedParameter;
 
 import android.test.AndroidTestCase;
 
 public class FormularTests extends AndroidTestCase {
 	
 	public void testSomme12() {
-		OperationComposition operation = new Somme();
+		BinaryOperation operation = new Somme();
 		operation.right(1f, FixedParameter.class);
 		operation.left(2f, FixedParameter.class);
 		Assert.assertEquals(3f, operation.result());
 	}
 	
 	public void testSomme13() {
-		OperationComposition operation = new Somme();
+		BinaryOperation operation = new Somme();
 		operation.right(1f, FixedParameter.class);
 		operation.left(3f, FixedParameter.class);
 		Assert.assertEquals(4f, operation.result());
 	}
 	
 	public void testSoustraction13() {
-		OperationComposition operation = new Soustraction();
+		BinaryOperation operation = new Soustraction();
 		operation.right(1f, FixedParameter.class);
 		operation.left(3f, FixedParameter.class);
 		Assert.assertEquals(2f, operation.result());
 	}
 	
 	public void testComposition() {
-		OperationComposition composition = new Soustraction();
-		OperationComposition operation1 = new Soustraction();
+		BinaryOperation composition = new Soustraction();
+		BinaryOperation operation1 = new Soustraction();
 		operation1.right(1f, FixedParameter.class);
 		operation1.left(3f, FixedParameter.class);
 		composition.left(operation1);
@@ -43,8 +43,8 @@ public class FormularTests extends AndroidTestCase {
 	}
 	
 	public void testComposition2() {
-		OperationComposition composition = new Somme();
-		OperationComposition operation1 = new Somme();
+		BinaryOperation composition = new Somme();
+		BinaryOperation operation1 = new Somme();
 		operation1.right(2f, FixedParameter.class);
 		operation1.left(3f, FixedParameter.class);
 		composition.left(operation1);

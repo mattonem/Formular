@@ -1,10 +1,10 @@
-package org.formular.core;
+package org.formular.operation;
 
 import java.util.Collection;
 
 import org.formular.card.CardElement;
 
-public abstract class OperationComposition extends Operation {
+public abstract class BinaryOperation extends Operation {
 
 	/**
 	 * 
@@ -26,13 +26,13 @@ public abstract class OperationComposition extends Operation {
 
 	public void right(float i, Class<?> class1) {
 		
-		ValueOperation newInstance = ValueOperation.createParameter(i, class1);
+		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		right = newInstance;
 		
 	}
 
 	public void left(float i, Class<?> class1) {
-		ValueOperation newInstance = ValueOperation.createParameter(i, class1);
+		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		left = newInstance;
 		
 	}

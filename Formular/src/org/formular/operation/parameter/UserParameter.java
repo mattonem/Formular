@@ -1,4 +1,4 @@
-package org.formular.core;
+package org.formular.operation.parameter;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -6,8 +6,10 @@ import java.util.LinkedList;
 import org.formular.card.CardElement;
 import org.formular.card.description.CardField;
 import org.formular.card.description.CardFieldFloat;
+import org.formular.core.Input;
+import org.formular.operation.ParameterOperation;
 
-public class UserParameter extends ValueOperation implements Input{
+public class UserParameter extends ParameterOperation implements Input{
 	
 	/**
 	 * 

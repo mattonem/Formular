@@ -1,6 +1,8 @@
-package org.formular.core;
+package org.formular.operation.binary;
 
-public class Soustraction extends OperationComposition {
+import org.formular.operation.BinaryOperation;
+
+public class Soustraction extends BinaryOperation {
 
 	/**
 	 * 

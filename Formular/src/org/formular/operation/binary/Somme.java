@@ -1,7 +1,9 @@
-package org.formular.core;
+package org.formular.operation.binary;
+
+import org.formular.operation.BinaryOperation;
 
 
-public class Somme extends OperationComposition {
+public class Somme extends BinaryOperation {
 
 	/**
 	 * 

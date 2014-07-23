@@ -1,11 +1,11 @@
 package org.formular;
 
 import org.formular.card.CardFragment;
-import org.formular.core.Operation;
-import org.formular.core.OperationComposition;
-import org.formular.core.FixedParameter;
-import org.formular.core.Somme;
-import org.formular.core.UserParameter;
+import org.formular.operation.Operation;
+import org.formular.operation.BinaryOperation;
+import org.formular.operation.binary.Somme;
+import org.formular.operation.parameter.FixedParameter;
+import org.formular.operation.parameter.UserParameter;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -27,10 +27,10 @@ public class Formular extends Activity {
 
 		if (savedInstanceState == null) {
 			Bundle operationBundle = new Bundle();
-			OperationComposition operation = new Somme();
+			BinaryOperation operation = new Somme();
 			operation.right(1, FixedParameter.class);
 			operation.left(2, UserParameter.class);
-			OperationComposition operation2 = new Somme();
+			BinaryOperation operation2 = new Somme();
 			operation2.right(3, UserParameter.class);
 			operation2.left(operation);
 			ope = operation2;

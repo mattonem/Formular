@@ -2,7 +2,7 @@ package org.formular.card.description;
 
 import org.formular.card.CardElement;
 import org.formular.card.CardElementVisitor;
-import org.formular.core.Operation;
+import org.formular.operation.Operation;
 
 
 public class CardText extends CardElement {
