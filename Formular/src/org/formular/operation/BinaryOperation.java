@@ -1,8 +1,10 @@
 package org.formular.operation;
 
 import java.util.Collection;
+import java.util.LinkedList;
 
 import org.formular.card.CardElement;
+import org.formular.core.Input;
 
 public abstract class BinaryOperation extends Operation {
 
@@ -15,26 +17,29 @@ public abstract class BinaryOperation extends Operation {
 	
 	public void right(Operation operation2) {
 		right = operation2;	
+		//TODO lorsqu'on aura des operations avec de veritables noms pour les inputs il faudra supprimer l'autoname 
+		this.autoNameInputs();
 	}
 
 	public void left(Operation operation1) {
 		left = operation1;
-		
+		//TODO lorsqu'on aura des operations avec de veritables noms pour les inputs il faudra supprimer l'autoname 
+		this.autoNameInputs();
 	}
 
 	
 
-	public void right(float i, Class<? extends ParameterOperation> class1) {
+	public Operation right(float i, Class<? extends ParameterOperation> class1) {
 		
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
-		right = newInstance;
-		
+		this.right(newInstance);
+		return newInstance;
 	}
 
-	public void left(float i, Class<? extends ParameterOperation> class1) {
+	public Operation left(float i, Class<? extends ParameterOperation> class1) {
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
-		left = newInstance;
-		
+		this.left(newInstance);
+		return newInstance;
 	}
 
 	@Override
@@ -42,5 +47,15 @@ public abstract class BinaryOperation extends Operation {
 		Collection<CardElement> inputDescriptions = right.inputDescriptions();
 		inputDescriptions.addAll(left.inputDescriptions());
 		return inputDescriptions;
+	}
+	
+	@Override
+	public Collection<Input> inputs() {
+		Collection<Input> inputs = new LinkedList<Input>();
+		if(right != null)
+			inputs.addAll(right.inputs());
+		if(left != null)
+			inputs.addAll(left.inputs());
+		return inputs;
 	}
 }

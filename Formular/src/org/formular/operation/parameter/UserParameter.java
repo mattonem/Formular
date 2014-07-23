@@ -15,7 +15,7 @@ public class UserParameter extends ParameterOperation implements Input{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	private String name;
 	@Override
 	public float getVal() {
 		return value;
@@ -31,9 +31,27 @@ public class UserParameter extends ParameterOperation implements Input{
 		
 		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
 		CardField cardNumberField = new CardFieldFloat(this);
-		cardNumberField.setLabel("input");
+		cardNumberField.setLabel(this.name);
 		inputDescriptions.add(cardNumberField);
 		return inputDescriptions ;
+	}
+	
+	@Override
+	public Collection<Input> inputs() {
+		Collection<Input> inputs = new LinkedList<Input>();
+		inputs.add(this);
+		return inputs;
+	}
+
+	@Override
+	public void setName(String name) {
+		this.name = name;
+		
+	}
+
+	@Override
+	public String getName() {
+		return name;
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.card.CardElement;
+import org.formular.core.Input;
 import org.formular.operation.ParameterOperation;
 
 public class FixedParameter extends ParameterOperation {
@@ -16,6 +17,11 @@ public class FixedParameter extends ParameterOperation {
 	@Override
 	public Collection<CardElement> inputDescriptions() {
 		return new LinkedList<CardElement>();
+	}
+
+	@Override
+	public Collection<Input> inputs() {
+		return new LinkedList<Input>();
 	}
 
 }
