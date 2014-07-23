@@ -24,14 +24,14 @@ public abstract class BinaryOperation extends Operation {
 
 	
 
-	public void right(float i, Class<?> class1) {
+	public void right(float i, Class<? extends ParameterOperation> class1) {
 		
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		right = newInstance;
 		
 	}
 
-	public void left(float i, Class<?> class1) {
+	public void left(float i, Class<? extends ParameterOperation> class1) {
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		left = newInstance;
 		

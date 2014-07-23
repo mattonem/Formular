@@ -34,10 +34,10 @@ public abstract class ParameterOperation extends Operation {
 		return value;
 	}
 
-	public static ParameterOperation createParameter(float i, Class<?> class1) {
+	public static ParameterOperation createParameter(float i, Class<? extends ParameterOperation> class1) {
 		ParameterOperation newInstance = null;
 		try {
-			newInstance = (ParameterOperation) class1.newInstance();
+			newInstance = class1.newInstance();
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
