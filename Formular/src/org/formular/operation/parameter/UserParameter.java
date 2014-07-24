@@ -30,9 +30,8 @@ public class UserParameter extends ParameterOperation implements Input{
 	public Collection<CardElement> inputDescriptions() {
 		
 		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
-		CardField cardNumberField = new CardFieldFloat(this);
-		cardNumberField.setLabel(this.name);
-		inputDescriptions.add(cardNumberField);
+		
+		inputDescriptions.add(getDesciption());
 		return inputDescriptions ;
 	}
 	
@@ -52,6 +51,13 @@ public class UserParameter extends ParameterOperation implements Input{
 	@Override
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public CardElement getDesciption() {
+		CardField cardNumberField = new CardFieldFloat(this);
+		cardNumberField.setLabel(this.name);
+		return cardNumberField;
 	}
 
 }

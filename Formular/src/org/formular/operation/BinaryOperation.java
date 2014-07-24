@@ -3,6 +3,8 @@ package org.formular.operation;
 import java.util.Collection;
 import java.util.LinkedList;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.Transformer;
 import org.formular.card.CardElement;
 import org.formular.core.Input;
 
@@ -44,9 +46,13 @@ public abstract class BinaryOperation extends Operation {
 
 	@Override
 	public Collection <CardElement> inputDescriptions() {
-		Collection<CardElement> inputDescriptions = right.inputDescriptions();
-		inputDescriptions.addAll(left.inputDescriptions());
-		return inputDescriptions;
+		return CollectionUtils.collect(inputs(),new Transformer<Input, CardElement>() {
+			@Override
+			public CardElement transform(Input input) {
+				return input.getDesciption();
+			}
+		});
+		
 	}
 	
 	@Override

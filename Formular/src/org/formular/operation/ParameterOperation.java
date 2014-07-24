@@ -1,5 +1,10 @@
 package org.formular.operation;
 
+import java.util.Collection;
+import java.util.LinkedList;
+
+import org.formular.card.CardElement;
+
 
 public abstract class ParameterOperation extends Operation {
 
@@ -14,7 +19,10 @@ public abstract class ParameterOperation extends Operation {
 		return value;
 	}
 
-
+	@Override
+	public Collection<CardElement> inputDescriptions() {
+		return new LinkedList<CardElement>();
+	}
 
 	public void setValue(float value) {
 		this.value = value;
