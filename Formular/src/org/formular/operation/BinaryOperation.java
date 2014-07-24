@@ -7,8 +7,9 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.Transformer;
 import org.formular.card.CardElement;
 import org.formular.core.Input;
+import org.formular.core.Operation;
 
-public abstract class BinaryOperation extends Operation {
+public abstract class BinaryOperation implements Operation {
 
 	/**
 	 * 
@@ -64,4 +65,12 @@ public abstract class BinaryOperation extends Operation {
 			inputs.addAll(left.inputs());
 		return inputs;
 	}
+	
+	public void autoNameInputs() {
+		int i = 1;
+		for (Input input : this.inputs()) {
+			input.setName("input " + i);
+			i++;
+		}
+	};
 }

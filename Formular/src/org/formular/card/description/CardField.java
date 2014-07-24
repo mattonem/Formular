@@ -8,12 +8,8 @@ import org.formular.operation.parameter.UserParameter;
 
 import android.text.InputType;
 
-public class CardField extends CardElement implements InputController {
+public class CardField implements CardElement, InputController {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private String label;
 	protected Input operation;
 

@@ -4,9 +4,10 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.card.CardElement;
+import org.formular.core.Operation;
 
 
-public abstract class ParameterOperation extends Operation {
+public abstract class ParameterOperation implements Operation {
 
 	/**
 	 * 

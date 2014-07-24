@@ -1,8 +1,8 @@
 package org.formular;
 
 import org.formular.card.CardFragment;
+import org.formular.core.Operation;
 import org.formular.operation.BinaryOperation;
-import org.formular.operation.Operation;
 import org.formular.operation.binary.Somme;
 import org.formular.operation.parameter.FixedParameter;
 import org.formular.operation.parameter.UserParameter;
