@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <BinaryOperation name="somme1">
     <UserParameter name="parameter1" />        
-	<FixedParameter name="fixed1" value="42"/>    
+	<FixedParameter id="input1" name="fixed1" value="42"/>    
 </BinaryOperation>
