@@ -13,6 +13,12 @@ public interface IOperation extends Serializable {
 	public String getName();
 	public void setName(String name);
 	
+	public IOperation getParent();
+	
+	public IOperation getRoot();
+	
+	public void setParent(IOperation parent);
+	
 	public int getId();
 	
 	public void setId(int id);

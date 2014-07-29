@@ -2,6 +2,7 @@ package org.formular;
 
 import org.formular.card.CardFragment;
 import org.formular.core.IOperation;
+import org.formular.core.XmlOperationDecoder;
 import org.formular.operation.BinaryOperation;
 import org.formular.operation.binary.Somme;
 import org.formular.operation.parameter.FixedParameter;
@@ -9,6 +10,7 @@ import org.formular.operation.parameter.UserParameter;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,7 +27,8 @@ public class Formular extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_formular);
 		//Load formule from xml
-		//XmlResourceParser s = getResources().getXml(R.xml.formule1);
+		XmlResourceParser xml = getResources().getXml(R.xml.formule1);
+		XmlOperationDecoder.fromXML(xml);
 		
 		if (savedInstanceState == null) {
 			Bundle operationBundle = new Bundle();
