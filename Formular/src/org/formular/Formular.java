@@ -1,7 +1,7 @@
 package org.formular;
 
 import org.formular.card.CardFragment;
-import org.formular.core.Operation;
+import org.formular.core.IOperation;
 import org.formular.operation.BinaryOperation;
 import org.formular.operation.binary.Somme;
 import org.formular.operation.parameter.FixedParameter;
@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 
 public class Formular extends Activity {
 
-	Operation ope;
+	IOperation ope;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

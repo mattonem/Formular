@@ -7,16 +7,16 @@ import org.formular.card.CardFragment;
 import org.formular.card.CardSideFragment;
 import org.formular.card.description.CardText;
 import org.formular.card.description.CardTitle;
-import org.formular.core.Operation;
+import org.formular.core.IOperation;
 
 import android.os.Bundle;
 
 public class OperationAfficheur extends CardFragment {
-	private Operation operation;
+	private IOperation operation;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		operation = (Operation) getArguments().getSerializable("operation");
+		operation = (IOperation) getArguments().getSerializable("operation");
 		Bundle frontArguments = new Bundle();
 		Bundle backArguments = new Bundle();
 		LinkedList<CardElement> frontDescription = new LinkedList<CardElement>();

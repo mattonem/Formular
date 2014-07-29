@@ -7,24 +7,24 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.Transformer;
 import org.formular.card.CardElement;
 import org.formular.core.Input;
-import org.formular.core.Operation;
+import org.formular.core.IOperation;
+import org.formular.core.AOperation;
 
-public abstract class BinaryOperation implements Operation {
+public abstract class BinaryOperation extends AOperation {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public Operation right;
-	public Operation left;
-	
-	public void right(Operation operation2) {
+	public IOperation right;
+	public IOperation left;
+	public void right(IOperation operation2) {
 		right = operation2;	
 		//TODO lorsqu'on aura des operations avec de veritables noms pour les inputs il faudra supprimer l'autoname 
 		this.autoNameInputs();
 	}
 
-	public void left(Operation operation1) {
+	public void left(IOperation operation1) {
 		left = operation1;
 		//TODO lorsqu'on aura des operations avec de veritables noms pour les inputs il faudra supprimer l'autoname 
 		this.autoNameInputs();
@@ -32,14 +32,14 @@ public abstract class BinaryOperation implements Operation {
 
 	
 
-	public Operation right(float i, Class<? extends ParameterOperation> class1) {
+	public IOperation right(float i, Class<? extends ParameterOperation> class1) {
 		
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		this.right(newInstance);
 		return newInstance;
 	}
 
-	public Operation left(float i, Class<? extends ParameterOperation> class1) {
+	public IOperation left(float i, Class<? extends ParameterOperation> class1) {
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		this.left(newInstance);
 		return newInstance;

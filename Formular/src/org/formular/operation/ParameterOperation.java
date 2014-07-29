@@ -4,16 +4,18 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.card.CardElement;
-import org.formular.core.Operation;
+import org.formular.core.AOperation;
 
 
-public abstract class ParameterOperation implements Operation {
+public abstract class ParameterOperation extends AOperation {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	public float value;
+	
+	
 	public ParameterOperation(){}
 	
 	public float getValue() {

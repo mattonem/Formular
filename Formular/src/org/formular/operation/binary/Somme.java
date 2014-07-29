@@ -9,7 +9,7 @@ public class Somme extends BinaryOperation {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@Override
 	public float result() {
 		if(right == null || left == null)

@@ -2,14 +2,14 @@ package org.formular.card.description;
 
 import org.formular.card.CardElement;
 import org.formular.card.CardElementVisitor;
-import org.formular.core.Operation;
+import org.formular.core.IOperation;
 
 
 public class CardText implements CardElement {
 
-	private Operation operation;
+	private IOperation operation;
 
-	public CardText(Operation operation) {
+	public CardText(IOperation operation) {
 		this.operation = operation;
 	}
 
