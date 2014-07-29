@@ -72,4 +72,16 @@ public abstract class BinaryOperation extends AOperation {
 			i++;
 		}
 	};
+	
+	@Override
+	public void addOperand(IOperation operation) {
+		if (left == null) {
+			left = operation;
+			return;
+		}
+		if(right == null) {
+			right = operation;
+			return;
+		}
+	}
 }

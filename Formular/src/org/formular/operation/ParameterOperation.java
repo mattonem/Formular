@@ -5,6 +5,7 @@ import java.util.LinkedList;
 
 import org.formular.card.CardElement;
 import org.formular.core.AOperationException;
+import org.formular.core.IOperation;
 import org.formular.core.MissingArgument;
 
 
@@ -51,6 +52,11 @@ public abstract class ParameterOperation extends AOperation {
 		}
 		newInstance.setValue(i);
 		return newInstance;
+	}
+	
+	@Override
+	public void addOperand(IOperation operation) {
+		//do nothing
 	}
 
 }
