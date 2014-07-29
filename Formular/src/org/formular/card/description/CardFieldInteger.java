@@ -6,6 +6,11 @@ import android.text.InputType;
 
 public class CardFieldInteger extends CardField {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public CardFieldInteger(UserParameter operation) {
 		super(operation);
 	}

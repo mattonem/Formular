@@ -2,19 +2,34 @@ package org.formular.card.description;
 
 import org.formular.card.CardElement;
 import org.formular.card.CardElementVisitor;
-import org.formular.core.Operation;
+import org.formular.core.AOperationException;
+import org.formular.core.IOperation;
+import org.formular.core.MissingArgument;
 
 
 public class CardText implements CardElement {
 
-	private Operation operation;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private IOperation operation;
 
-	public CardText(Operation operation) {
+	public CardText(IOperation operation) {
 		this.operation = operation;
 	}
 
 	public CharSequence getText() {
-		return ""+operation.result();
+		try {
+			return ""+ operation.result();
+		}	catch (MissingArgument e) {
+			return "Missing parameter";
+		}
+			catch (AOperationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override

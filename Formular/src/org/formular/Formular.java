@@ -1,7 +1,7 @@
 package org.formular;
 
 import org.formular.card.CardFragment;
-import org.formular.core.Operation;
+import org.formular.core.IOperation;
 import org.formular.operation.BinaryOperation;
 import org.formular.operation.binary.Somme;
 import org.formular.operation.parameter.FixedParameter;
@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 
 public class Formular extends Activity {
 
-	Operation ope;
+	IOperation ope;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +30,10 @@ public class Formular extends Activity {
 		if (savedInstanceState == null) {
 			Bundle operationBundle = new Bundle();
 			BinaryOperation operation = new Somme();
-			operation.right(1, FixedParameter.class);
-			operation.left(2, UserParameter.class);
+			operation.right(1f, FixedParameter.class);
+			operation.left(2f, UserParameter.class);
 			BinaryOperation operation2 = new Somme();
-			operation2.right(3, UserParameter.class);
+			operation2.right(null, UserParameter.class);
 			operation2.left(operation);
 			ope = operation2;
 			

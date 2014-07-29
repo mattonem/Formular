@@ -10,6 +10,10 @@ import android.text.InputType;
 
 public class CardField implements CardElement, InputController {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String label;
 	protected Input operation;
 
@@ -42,7 +46,8 @@ public class CardField implements CardElement, InputController {
 
 	@Override
 	public String getVal() {
-		return Float.toString(operation.getVal());
+		Float val = operation.getVal();
+		return (val != null) ? val.toString() : ""; 
 	}
 
 	public int getType() {
