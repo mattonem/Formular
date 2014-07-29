@@ -15,11 +15,7 @@ public interface IOperation extends Serializable {
 	
 	public void addOperand(IOperation operation);
 	
-	public IOperation getParent();
-	
 	public IOperation getRoot();
-	
-	public void setParent(IOperation parent);
 	
 	public int getId();
 	
@@ -28,6 +24,10 @@ public interface IOperation extends Serializable {
 	public Collection <CardElement> inputDescriptions();
 	
 	public Collection<Input> inputs();
+
+	public abstract void setParent(IOperation parent);
+
+	public abstract IOperation getParent();
 	
 	
 	
