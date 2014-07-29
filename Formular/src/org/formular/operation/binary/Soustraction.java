@@ -12,7 +12,7 @@ public class Soustraction extends BinaryOperation {
 
 	@Override
 	public float result() throws AOperationException {
-		return left().result() - right().result();
+		return left.result() - right.result();
 	}
 
 }
