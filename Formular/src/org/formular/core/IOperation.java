@@ -10,6 +10,8 @@ public interface IOperation extends Serializable {
 	
 	public abstract float result() throws AOperationException;
 	
+	public void addOperand(IOperation operation);
+	
 	public String getName();
 	public void setName(String name);
 	
