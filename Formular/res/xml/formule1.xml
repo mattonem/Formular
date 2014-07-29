@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <org.formular.operation.binary.Somme name="somme1">
     <org.formular.operation.parameter.UserParameter name="parameter1" />        
-	<org.formular.operation.parameter.FixedParameter id="input1" name="fixed1" value="42"/>    
+	<org.formular.operation.parameter.FixedParameter id="input1" name="fixed1" value="42.0"/>    
 </org.formular.operation.binary.Somme>

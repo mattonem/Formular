@@ -3,10 +3,6 @@ package org.formular;
 import org.formular.card.CardFragment;
 import org.formular.core.IOperation;
 import org.formular.core.XmlOperationDecoder;
-import org.formular.operation.BinaryOperation;
-import org.formular.operation.binary.Somme;
-import org.formular.operation.parameter.FixedParameter;
-import org.formular.operation.parameter.UserParameter;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -28,17 +24,10 @@ public class Formular extends Activity {
 		setContentView(R.layout.activity_formular);
 		//Load formule from xml
 		XmlResourceParser xml = getResources().getXml(R.xml.formule1);
-		XmlOperationDecoder.fromXML(xml);
+		ope = XmlOperationDecoder.fromXML(xml);
 		
 		if (savedInstanceState == null) {
 			Bundle operationBundle = new Bundle();
-			BinaryOperation operation = new Somme();
-			operation.right(1f, FixedParameter.class);
-			operation.left(2f, UserParameter.class);
-			BinaryOperation operation2 = new Somme();
-			operation2.right(null, UserParameter.class);
-			operation2.left(operation);
-			ope = operation2;
 			
 			operationBundle.putSerializable("operation", ope);
 			Fragment fragment = new PlaceholderFragment();

@@ -23,12 +23,12 @@ public abstract class AOperation implements IOperation {
 	
 	@Override
 	public IOperation getParent() {
-		return parent;
+		return (parent == null )? this : parent;
 	}
 	
 	@Override
 	public IOperation getRoot() {
-		return (parent == null ) ? this : parent.getRoot();
+		return (getParent() == this ) ? this : getParent().getRoot();
 	}
 
 	

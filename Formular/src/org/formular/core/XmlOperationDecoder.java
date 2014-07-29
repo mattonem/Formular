@@ -1,7 +1,6 @@
 package org.formular.core;
 
-import java.io.IOException;
-
+import org.formular.operation.ParameterOperation;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.res.XmlResourceParser;
@@ -20,10 +19,30 @@ public class XmlOperationDecoder {
 					@SuppressWarnings("unchecked")
 					Class<IOperation> cls = (Class<IOperation>) Class.forName(xpp.getName());
 					IOperation newInstance = cls.newInstance();
-					if (current == null) {
-						// TODO
+					if (current != null) {
+						current.addOperand(newInstance);
 					}
+					for (int i = 0; i < xpp.getAttributeCount(); i++) {
+						String attributeName = xpp.getAttributeName(i);
+						log(attributeName);
+						if (attributeName.equals("name")) {
+							newInstance.setName(xpp.getAttributeValue(i));
+						}
+						if (attributeName.equals("id")) {
+							newInstance.setId(xpp.getAttributeIntValue(i, 0));
+						}
+						if (attributeName.equals("value")) {
+							((ParameterOperation) newInstance).setValue(xpp.getAttributeFloatValue(i, 0f));
+							
+						}
+					}
+					
 					current = newInstance;
+					
+				}
+				if (eventType == XmlResourceParser.END_TAG) {
+					log("Close " + xpp.getName());
+					current = current.getParent();
 				}
 				eventType = xpp.next();
 			}
@@ -35,6 +54,7 @@ public class XmlOperationDecoder {
 			log("ERREUR " + e.toString());
 			e.printStackTrace();
 		}
+		log(current.getRoot().getName());
 		return current.getRoot();
 	};
 
