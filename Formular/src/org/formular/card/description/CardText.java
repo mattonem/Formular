@@ -9,6 +9,10 @@ import org.formular.core.MissingArgument;
 
 public class CardText implements CardElement {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private IOperation operation;
 
 	public CardText(IOperation operation) {

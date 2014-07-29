@@ -6,6 +6,10 @@ import org.formular.card.CardElementVisitor;
 
 public class CardTitle implements CardElement {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String title;
 
 	public CardTitle(String title) {
