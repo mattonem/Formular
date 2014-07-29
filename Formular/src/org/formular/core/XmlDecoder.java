@@ -4,7 +4,7 @@ import android.content.res.XmlResourceParser;
 
 public class XmlDecoder {
 	
-	public static Operation fromXML(XmlResourceParser xml){
+	public static IOperation fromXML(XmlResourceParser xml){
 		
 		return null;
 	};
