@@ -8,7 +8,7 @@ import org.formular.card.CardElement;
 public interface IOperation extends Serializable {
 	
 	
-	public abstract float result();
+	public abstract float result() throws AOperationException;
 	
 	public String getName();
 	public void setName(String name);

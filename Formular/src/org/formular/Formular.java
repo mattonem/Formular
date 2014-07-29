@@ -28,10 +28,10 @@ public class Formular extends Activity {
 		if (savedInstanceState == null) {
 			Bundle operationBundle = new Bundle();
 			BinaryOperation operation = new Somme();
-			operation.right(1, FixedParameter.class);
-			operation.left(2, UserParameter.class);
+			operation.right(1f, FixedParameter.class);
+			operation.left(2f, UserParameter.class);
 			BinaryOperation operation2 = new Somme();
-			operation2.right(3, UserParameter.class);
+			operation2.right(null, UserParameter.class);
 			operation2.left(operation);
 			ope = operation2;
 			

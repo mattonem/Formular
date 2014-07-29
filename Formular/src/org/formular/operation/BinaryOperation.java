@@ -8,7 +8,6 @@ import org.apache.commons.collections4.Transformer;
 import org.formular.card.CardElement;
 import org.formular.core.Input;
 import org.formular.core.IOperation;
-import org.formular.core.AOperation;
 
 public abstract class BinaryOperation extends AOperation {
 
@@ -32,14 +31,14 @@ public abstract class BinaryOperation extends AOperation {
 
 	
 
-	public IOperation right(float i, Class<? extends ParameterOperation> class1) {
+	public IOperation right(Float i, Class<? extends ParameterOperation> class1) {
 		
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		this.right(newInstance);
 		return newInstance;
 	}
 
-	public IOperation left(float i, Class<? extends ParameterOperation> class1) {
+	public IOperation left(Float i, Class<? extends ParameterOperation> class1) {
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		this.left(newInstance);
 		return newInstance;

@@ -17,7 +17,7 @@ public class UserParameter extends ParameterOperation implements Input{
 	private static final long serialVersionUID = 1L;
 	private String name;
 	@Override
-	public float getVal() {
+	public Float getVal() {
 		return value;
 	}
 

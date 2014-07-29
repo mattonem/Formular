@@ -42,7 +42,8 @@ public class CardField implements CardElement, InputController {
 
 	@Override
 	public String getVal() {
-		return Float.toString(operation.getVal());
+		Float val = operation.getVal();
+		return (val != null) ? val.toString() : ""; 
 	}
 
 	public int getType() {

@@ -1,4 +1,6 @@
-package org.formular.core;
+package org.formular.operation;
+
+import org.formular.core.IOperation;
 
 
 public abstract class AOperation implements IOperation {
