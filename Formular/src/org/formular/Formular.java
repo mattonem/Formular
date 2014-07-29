@@ -24,7 +24,9 @@ public class Formular extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_formular);
-
+		//Load formule from xml
+		//XmlResourceParser s = getResources().getXml(R.xml.formule1);
+		
 		if (savedInstanceState == null) {
 			Bundle operationBundle = new Bundle();
 			BinaryOperation operation = new Somme();
