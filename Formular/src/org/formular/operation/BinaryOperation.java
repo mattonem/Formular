@@ -77,10 +77,12 @@ public abstract class BinaryOperation extends AOperation {
 	public void addOperand(IOperation operation) {
 		if (left == null) {
 			left = operation;
+			operation.setParent(this);
 			return;
 		}
 		if(right == null) {
 			right = operation;
+			operation.setParent(this);
 			return;
 		}
 	}

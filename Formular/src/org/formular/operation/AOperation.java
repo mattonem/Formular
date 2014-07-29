@@ -12,6 +12,7 @@ public abstract class AOperation implements IOperation {
 	
 	public String name;
 	private int id;
+	private IOperation parent;
 	
 	@Override
 	public String getName() {
@@ -32,6 +33,16 @@ public abstract class AOperation implements IOperation {
 	@Override
 	public int getId() {
 		return id;
+	}
+
+	@Override
+	public IOperation getParent() {
+		return parent;
+	}
+
+	@Override
+	public void setParent(IOperation parent) {
+		this.parent = parent;
 	}
 	
 
