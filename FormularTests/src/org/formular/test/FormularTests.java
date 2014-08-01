@@ -4,6 +4,9 @@ import junit.framework.Assert;
 
 import org.formular.core.AOperationException;
 import org.formular.operation.BinaryOperation;
+import org.formular.operation.DivideByZero;
+import org.formular.operation.binary.Division;
+import org.formular.operation.binary.Multiplication;
 import org.formular.operation.binary.Somme;
 import org.formular.operation.binary.Soustraction;
 import org.formular.operation.parameter.FixedParameter;
@@ -53,6 +56,37 @@ public class FormularTests extends AndroidTestCase {
 		composition.left(operation1);
 		composition.right(2f, FixedParameter.class);
 		this.assertResult(composition, 7f);
+	}
+	
+	public void testMultiplication() {
+		 BinaryOperation operation = new Multiplication();
+		 operation.right(5f, FixedParameter.class);
+		 operation.left(2f , FixedParameter.class);
+		 this.assertResult(operation, 10f);
+	}
+	
+	public void testDivision() {
+		BinaryOperation operation = new Division();
+		operation.left(4f, FixedParameter.class);
+		operation.right(2f, FixedParameter.class);
+		this.assertResult(operation,2f);
+	}
+	
+	public void testDivision2() {
+		BinaryOperation operation = new Division();
+		operation.left(4f, FixedParameter.class);
+		operation.right(0f, FixedParameter.class);
+		try {
+			operation.result();
+		} 	catch (DivideByZero e) {
+			return;
+		}
+			catch (AOperationException e) {
+			Assert.fail("Je veux une exception plus precise");
+			return;
+		}
+		
+		Assert.fail("Diviser par zero ne devrait pas etre possible");
 	}
 	
 	protected void assertResult(BinaryOperation operation, Float expected) {
