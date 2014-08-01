@@ -16,36 +16,23 @@ public class FormularTests extends AndroidTestCase {
 		BinaryOperation operation = new Somme();
 		operation.right(1f, FixedParameter.class);
 		operation.left(2f, FixedParameter.class);
-		try {
-			Assert.assertEquals(3f, operation.result());
-		} catch (AOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		assertResult(operation, 3f);
 	}
+
+	
 	
 	public void testSomme13() {
 		BinaryOperation operation = new Somme();
 		operation.right(1f, FixedParameter.class);
 		operation.left(3f, FixedParameter.class);
-		try {
-			Assert.assertEquals(4f, operation.result());
-		} catch (AOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.assertResult(operation, 4f);
 	}
 	
 	public void testSoustraction13() {
 		BinaryOperation operation = new Soustraction();
 		operation.right(1f, FixedParameter.class);
 		operation.left(3f, FixedParameter.class);
-		try {
-			Assert.assertEquals(2f, operation.result());
-		} catch (AOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.assertResult(operation, 2f);
 	}
 	
 	public void testComposition() {
@@ -55,12 +42,7 @@ public class FormularTests extends AndroidTestCase {
 		operation1.left(3f, FixedParameter.class);
 		composition.left(operation1);
 		composition.right(3f, FixedParameter.class);
-		try {
-			Assert.assertEquals(-1f, composition.result());
-		} catch (AOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		this.assertResult(composition, -1f);
 	}
 	
 	public void testComposition2() {
@@ -70,11 +52,14 @@ public class FormularTests extends AndroidTestCase {
 		operation1.left(3f, FixedParameter.class);
 		composition.left(operation1);
 		composition.right(2f, FixedParameter.class);
+		this.assertResult(composition, 7f);
+	}
+	
+	protected void assertResult(BinaryOperation operation, Float expected) {
 		try {
-			Assert.assertEquals(7f, composition.result());
+			Assert.assertEquals(expected, operation.result());
 		} catch (AOperationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			Assert.fail("should not raise exception");
 		}
 	}
 	
