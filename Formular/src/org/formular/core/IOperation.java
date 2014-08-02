@@ -1,7 +1,7 @@
 package org.formular.core;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 
 import org.formular.card.CardElement;
 import org.formular.operation.AOperationException;
@@ -22,9 +22,9 @@ public interface IOperation extends Serializable {
 	
 	public void setId(int id);
 	
-	public Collection <CardElement> inputDescriptions();
+	public List<CardElement> inputDescriptions();
 	
-	public Collection<Input> inputs();
+	public List<Input> inputs();
 
 	public abstract void setParent(IOperation parent);
 

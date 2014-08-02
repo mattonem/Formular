@@ -1,7 +1,7 @@
 package org.formular.operation.concrete;
 
-import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.formular.core.Input;
 import org.formular.operation.ParameterOperation;
@@ -16,7 +16,7 @@ public class FixedParameter extends ParameterOperation {
 	
 
 	@Override
-	public Collection<Input> inputs() {
+	public List<Input> inputs() {
 		return new LinkedList<Input>();
 	}
 
