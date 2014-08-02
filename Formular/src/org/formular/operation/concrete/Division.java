@@ -1,8 +1,8 @@
-package org.formular.operation.binary;
+package org.formular.operation.concrete;
 
-import org.formular.core.AOperationException;
+import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
-import org.formular.operation.DivideByZero;
+import org.formular.operation.exception.DivideByZero;
 
 public class Division extends BinaryOperation {
 

@@ -2,9 +2,9 @@ package org.formular.card.description;
 
 import org.formular.card.CardElement;
 import org.formular.card.CardElementVisitor;
-import org.formular.core.AOperationException;
 import org.formular.core.IOperation;
-import org.formular.core.MissingArgument;
+import org.formular.operation.AOperationException;
+import org.formular.operation.exception.MissingArgument;
 
 
 public class CardText implements CardElement {

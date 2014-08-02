@@ -1,19 +1,18 @@
 package org.formular.test;
 
 import junit.framework.Assert;
+import junit.framework.TestCase;
 
-import org.formular.core.AOperationException;
+import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
-import org.formular.operation.DivideByZero;
-import org.formular.operation.binary.Division;
-import org.formular.operation.binary.Multiplication;
-import org.formular.operation.binary.Somme;
-import org.formular.operation.binary.Soustraction;
-import org.formular.operation.parameter.FixedParameter;
+import org.formular.operation.concrete.Division;
+import org.formular.operation.concrete.FixedParameter;
+import org.formular.operation.concrete.Multiplication;
+import org.formular.operation.concrete.Somme;
+import org.formular.operation.concrete.Soustraction;
+import org.formular.operation.exception.DivideByZero;
 
-import android.test.AndroidTestCase;
-
-public class FormularTests extends AndroidTestCase {
+public class OperationTests extends TestCase {
 	
 	public void testSomme12() {
 		BinaryOperation operation = new Somme();

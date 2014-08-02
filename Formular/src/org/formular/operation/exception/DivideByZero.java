@@ -1,6 +1,7 @@
-package org.formular.operation;
+package org.formular.operation.exception;
 
-import org.formular.core.AOperationException;
+import org.formular.operation.AOperationException;
+
 
 public class DivideByZero extends AOperationException {
 
