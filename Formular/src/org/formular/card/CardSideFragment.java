@@ -5,10 +5,12 @@ import java.util.LinkedList;
 import java.util.Map.Entry;
 
 import org.formular.R;
-import org.formular.card.description.CardField;
-import org.formular.card.description.CardText;
-import org.formular.card.description.CardTitle;
 import org.formular.core.InputController;
+import org.formular.description.CardElement;
+import org.formular.description.CardElementVisitor;
+import org.formular.description.concrete.CardField;
+import org.formular.description.concrete.CardText;
+import org.formular.description.concrete.CardTitle;
 
 import android.app.Fragment;
 import android.os.Bundle;

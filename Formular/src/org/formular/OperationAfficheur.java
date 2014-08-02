@@ -2,12 +2,12 @@ package org.formular;
 
 import java.util.LinkedList;
 
-import org.formular.card.CardElement;
 import org.formular.card.CardFragment;
 import org.formular.card.CardSideFragment;
-import org.formular.card.description.CardText;
-import org.formular.card.description.CardTitle;
 import org.formular.core.IOperation;
+import org.formular.description.CardElement;
+import org.formular.description.concrete.CardText;
+import org.formular.description.concrete.CardTitle;
 
 import android.os.Bundle;
 

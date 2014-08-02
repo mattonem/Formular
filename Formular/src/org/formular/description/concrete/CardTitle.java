@@ -1,7 +1,8 @@
-package org.formular.card.description;
+package org.formular.description.concrete;
 
-import org.formular.card.CardElement;
-import org.formular.card.CardElementVisitor;
+import org.formular.description.CardElement;
+import org.formular.description.CardElementVisitor;
+
 
 
 public class CardTitle implements CardElement {

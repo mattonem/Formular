@@ -3,10 +3,10 @@ package org.formular.operation.concrete;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import org.formular.card.CardElement;
-import org.formular.card.description.CardField;
-import org.formular.card.description.CardFieldFloat;
 import org.formular.core.Input;
+import org.formular.description.CardElement;
+import org.formular.description.concrete.CardField;
+import org.formular.description.concrete.CardFieldFloat;
 import org.formular.operation.ParameterOperation;
 
 public class UserParameter extends ParameterOperation implements Input{

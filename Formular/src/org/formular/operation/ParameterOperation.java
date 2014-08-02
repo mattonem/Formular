@@ -3,8 +3,8 @@ package org.formular.operation;
 import java.util.Collection;
 import java.util.LinkedList;
 
-import org.formular.card.CardElement;
 import org.formular.core.IOperation;
+import org.formular.description.CardElement;
 import org.formular.operation.exception.MissingArgument;
 
 

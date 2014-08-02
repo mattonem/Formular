@@ -5,9 +5,9 @@ import java.util.LinkedList;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.Transformer;
-import org.formular.card.CardElement;
 import org.formular.core.Input;
 import org.formular.core.IOperation;
+import org.formular.description.CardElement;
 
 public abstract class BinaryOperation extends AOperation {
 

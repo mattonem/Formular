@@ -1,4 +1,4 @@
-package org.formular.card;
+package org.formular.description;
 
 import java.io.Serializable;
 

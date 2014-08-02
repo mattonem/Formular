@@ -1,6 +1,6 @@
 package org.formular.core;
 
-import org.formular.card.CardElement;
+import org.formular.description.CardElement;
 
 public interface Input {
 	public void setVal(float i);
