@@ -15,7 +15,6 @@ public class UserParameter extends ParameterOperation implements Input{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String name;
 	@Override
 	public Float getVal() {
 		return value;
@@ -40,17 +39,6 @@ public class UserParameter extends ParameterOperation implements Input{
 		List<Input> inputs = new LinkedList<Input>();
 		inputs.add(this);
 		return inputs;
-	}
-
-	@Override
-	public void setName(String name) {
-		this.name = name;
-		
-	}
-
-	@Override
-	public String getName() {
-		return name;
 	}
 
 	@Override

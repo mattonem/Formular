@@ -7,6 +7,8 @@ import org.formular.card.CardElement;
 import org.formular.core.IOperation;
 import org.formular.operation.exception.MissingArgument;
 
+import android.os.Bundle;
+
 
 public abstract class ParameterOperation extends AOperation {
 
@@ -16,6 +18,17 @@ public abstract class ParameterOperation extends AOperation {
 	private static final long serialVersionUID = 1L;
 	public Float value;
 	
+	
+	@Override
+	public void initalizeWith(Bundle bundle) {
+		try {
+			value = Float.valueOf(bundle.getString("value"));
+		} catch (NullPointerException e) {
+			value = null;
+		}
+		
+		super.initalizeWith(bundle);
+	}
 	
 	public ParameterOperation(){}
 	

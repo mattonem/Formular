@@ -6,6 +6,8 @@ import java.util.List;
 import org.formular.card.CardElement;
 import org.formular.operation.AOperationException;
 
+import android.os.Bundle;
+
 public interface IOperation extends Serializable {
 	
 	
@@ -29,6 +31,8 @@ public interface IOperation extends Serializable {
 	public abstract void setParent(IOperation parent);
 
 	public abstract IOperation getParent();
+
+	public abstract void initalizeWith(Bundle bundle);
 	
 	
 	
