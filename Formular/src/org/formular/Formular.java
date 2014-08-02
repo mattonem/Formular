@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,6 +29,7 @@ public class Formular extends Activity {
 		try {
 			ope = XmlOperationDecoder.fromXML(xml);
 		} catch (OperationParsingException e) {
+			Log.d("parsing", "parsing error");
 			ope = null;
 		}
 		

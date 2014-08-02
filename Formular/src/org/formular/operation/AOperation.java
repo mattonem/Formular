@@ -2,6 +2,8 @@ package org.formular.operation;
 
 import org.formular.core.IOperation;
 
+import android.os.Bundle;
+
 
 public abstract class AOperation implements IOperation {
 
@@ -16,6 +18,17 @@ public abstract class AOperation implements IOperation {
 	private int id;
 	private IOperation parent;
 
+	@Override
+	public void initalizeWith(Bundle bundle) {
+		name = bundle.getString("name");
+		try {
+			id = Integer.valueOf(bundle.getInt("id"));
+		} catch (NullPointerException e) {
+			id = 0;
+		}
+		
+	}
+	
 	@Override
 	public void setParent(IOperation parent) {
 		this.parent = parent;
@@ -34,7 +47,6 @@ public abstract class AOperation implements IOperation {
 	
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return name;
 	}
 

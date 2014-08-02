@@ -1,8 +1,7 @@
 package org.formular.core;
 
-import org.formular.operation.ParameterOperation;
-
 import android.content.res.XmlResourceParser;
+import android.os.Bundle;
 import android.util.Log;
 
 public class XmlOperationDecoder {
@@ -36,6 +35,7 @@ public class XmlOperationDecoder {
 		catch (Exception e) {
 			throw new OperationParsingException();
 		}
+		log("parsing OK");
 		return _current.getRoot();
 	}
 
@@ -44,20 +44,12 @@ public class XmlOperationDecoder {
 		if (_current != null) {
 			_current.addOperand(newInstance);
 		}
+		Bundle bundle = new Bundle();
 		for (int i = 0; i < xpp.getAttributeCount(); i++) {
-			String attributeName = xpp.getAttributeName(i);
-			log(attributeName);
-			if (attributeName.equals("name")) {
-				newInstance.setName(xpp.getAttributeValue(i));
-			}
-			if (attributeName.equals("id")) {
-				newInstance.setId(xpp.getAttributeIntValue(i, 0));
-			}
-			if (attributeName.equals("value")) {
-				((ParameterOperation) newInstance).setValue(xpp
-						.getAttributeFloatValue(i, 0f));
-
-			}
+			log(xpp.getAttributeName(i));
+			log(xpp.getAttributeType(i));
+			bundle.putString(xpp.getAttributeName(i), xpp.getAttributeValue(i));
+			newInstance.initalizeWith(bundle);
 		}
 	}
 
