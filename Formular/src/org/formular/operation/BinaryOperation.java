@@ -17,14 +17,10 @@ public abstract class BinaryOperation extends AOperation {
 	public IOperation left;
 	public void right(IOperation operation2) {
 		right = operation2;	
-		//TODO lorsqu'on aura des operations avec de veritables noms pour les inputs il faudra supprimer l'autoname 
-		this.autoNameInputs();
 	}
 
 	public void left(IOperation operation1) {
 		left = operation1;
-		//TODO lorsqu'on aura des operations avec de veritables noms pour les inputs il faudra supprimer l'autoname 
-		this.autoNameInputs();
 	}
 
 	
