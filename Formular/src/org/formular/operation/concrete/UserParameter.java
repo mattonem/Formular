@@ -1,7 +1,7 @@
 package org.formular.operation.concrete;
 
-import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.formular.core.Input;
 import org.formular.description.DescriptionElement;
@@ -15,7 +15,6 @@ public class UserParameter extends ParameterOperation implements Input{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String name;
 	@Override
 	public Float getVal() {
 		return value;
@@ -27,30 +26,19 @@ public class UserParameter extends ParameterOperation implements Input{
 	}
 
 	@Override
-	public Collection<DescriptionElement> inputDescriptions() {
+	public List<DescriptionElement> inputDescriptions() {
 		
-		Collection<DescriptionElement> inputDescriptions = new LinkedList<DescriptionElement>();
+		List<DescriptionElement> inputDescriptions = new LinkedList<DescriptionElement>();
 		
 		inputDescriptions.add(getDesciption());
 		return inputDescriptions ;
 	}
 	
 	@Override
-	public Collection<Input> inputs() {
-		Collection<Input> inputs = new LinkedList<Input>();
+	public List<Input> inputs() {
+		List<Input> inputs = new LinkedList<Input>();
 		inputs.add(this);
 		return inputs;
-	}
-
-	@Override
-	public void setName(String name) {
-		this.name = name;
-		
-	}
-
-	@Override
-	public String getName() {
-		return name;
 	}
 
 	@Override

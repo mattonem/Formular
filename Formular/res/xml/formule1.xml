@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<org.formular.operation.concrete.Somme name="somme1">
-    <org.formular.operation.concrete.UserParameter name="parameter1" />        
-	<org.formular.operation.concrete.FixedParameter id="input1" name="fixed1" value="42.0"/>    
-</org.formular.operation.concrete.Somme>
+<Somme name="somme1">
+    <UserParameter name="parameter1" />        
+	<FixedParameter id="input1" name="fixed1" value="42.0"/>    
+</Somme>

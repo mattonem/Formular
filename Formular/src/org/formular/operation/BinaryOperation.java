@@ -1,12 +1,10 @@
 package org.formular.operation;
 
-import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.collections4.Transformer;
-import org.formular.core.Input;
 import org.formular.core.IOperation;
+import org.formular.core.Input;
 import org.formular.description.DescriptionElement;
 
 public abstract class BinaryOperation extends AOperation {
@@ -19,14 +17,10 @@ public abstract class BinaryOperation extends AOperation {
 	public IOperation left;
 	public void right(IOperation operation2) {
 		right = operation2;	
-		//TODO lorsqu'on aura des operations avec de veritables noms pour les inputs il faudra supprimer l'autoname 
-		this.autoNameInputs();
 	}
 
 	public void left(IOperation operation1) {
 		left = operation1;
-		//TODO lorsqu'on aura des operations avec de veritables noms pour les inputs il faudra supprimer l'autoname 
-		this.autoNameInputs();
 	}
 
 	
@@ -45,19 +39,17 @@ public abstract class BinaryOperation extends AOperation {
 	}
 
 	@Override
-	public Collection <DescriptionElement> inputDescriptions() {
-		return CollectionUtils.collect(inputs(),new Transformer<Input, DescriptionElement>() {
-			@Override
-			public DescriptionElement transform(Input input) {
-				return input.getDesciption();
-			}
-		});
-		
+	public List <DescriptionElement> inputDescriptions() {
+		List<DescriptionElement> ret = new LinkedList<DescriptionElement>();
+		for (Input input: inputs()) {
+			ret.add(input.getDesciption());
+		}
+		return ret;
 	}
 	
 	@Override
-	public Collection<Input> inputs() {
-		Collection<Input> inputs = new LinkedList<Input>();
+	public List<Input> inputs() {
+		List<Input> inputs = new LinkedList<Input>();
 		if(right != null)
 			inputs.addAll(right.inputs());
 		if(left != null)
