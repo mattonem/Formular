@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import org.formular.card.CardElement;
+import org.formular.operation.AOperationException;
 
 public interface IOperation extends Serializable {
 	
