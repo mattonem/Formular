@@ -1,13 +1,13 @@
-package org.formular.card.description;
+package org.formular.description.concrete;
 
-import org.formular.card.CardElement;
-import org.formular.card.CardElementVisitor;
-import org.formular.core.AOperationException;
 import org.formular.core.IOperation;
-import org.formular.core.MissingArgument;
+import org.formular.description.DescriptionElement;
+import org.formular.description.DescripitonVisitor;
+import org.formular.operation.AOperationException;
+import org.formular.operation.exception.MissingArgument;
 
 
-public class CardText implements CardElement {
+public class TextDescription implements DescriptionElement {
 
 	/**
 	 * 
@@ -15,7 +15,7 @@ public class CardText implements CardElement {
 	private static final long serialVersionUID = 1L;
 	private IOperation operation;
 
-	public CardText(IOperation operation) {
+	public TextDescription(IOperation operation) {
 		this.operation = operation;
 	}
 
@@ -33,7 +33,7 @@ public class CardText implements CardElement {
 	}
 
 	@Override
-	public void accept(CardElementVisitor visitor) {
+	public void accept(DescripitonVisitor visitor) {
 		visitor.visit(this);
 	}
 

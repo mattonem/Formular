@@ -1,6 +1,6 @@
-package org.formular.operation.binary;
+package org.formular.operation.concrete;
 
-import org.formular.core.AOperationException;
+import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
 
 public class Soustraction extends BinaryOperation {

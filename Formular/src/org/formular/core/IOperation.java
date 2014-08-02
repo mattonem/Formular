@@ -1,9 +1,12 @@
 package org.formular.core;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 
-import org.formular.card.CardElement;
+import org.formular.description.DescriptionElement;
+import org.formular.operation.AOperationException;
+
+import android.os.Bundle;
 
 public interface IOperation extends Serializable {
 	
@@ -21,13 +24,15 @@ public interface IOperation extends Serializable {
 	
 	public void setId(int id);
 	
-	public Collection <CardElement> inputDescriptions();
+	public List <DescriptionElement> inputDescriptions();
 	
-	public Collection<Input> inputs();
+	public List<Input> inputs();
 
 	public abstract void setParent(IOperation parent);
 
 	public abstract IOperation getParent();
+
+	public abstract void initalizeWith(Bundle bundle);
 	
 	
 	
