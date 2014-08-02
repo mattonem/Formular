@@ -8,7 +8,7 @@ import android.util.Log;
 public class XmlOperationDecoder {
 
 	private static IOperation _current;
-
+	
 	public static IOperation fromXML(XmlResourceParser xpp) throws OperationParsingException {
 		_current = null;
 		try {
@@ -64,7 +64,13 @@ public class XmlOperationDecoder {
 	@SuppressWarnings("unchecked")
 	private static Class<IOperation> findClass(String name)
 			throws ClassNotFoundException {
-		return (Class<IOperation>) Class.forName(name);
+		Class<IOperation> clazz;
+		try {
+			clazz = (Class<IOperation>) Class.forName(name);
+		} catch (ClassNotFoundException e) {
+			clazz = (Class<IOperation>) Class.forName("org.formular.operation.concrete." + name);
+		}
+		return clazz;
 	};
 
 	public static void log(String s) {
