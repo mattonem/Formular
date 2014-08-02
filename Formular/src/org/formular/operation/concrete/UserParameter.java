@@ -1,7 +1,7 @@
 package org.formular.operation.concrete;
 
-import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.formular.card.CardElement;
 import org.formular.card.description.CardField;
@@ -27,17 +27,17 @@ public class UserParameter extends ParameterOperation implements Input{
 	}
 
 	@Override
-	public Collection<CardElement> inputDescriptions() {
+	public List<CardElement> inputDescriptions() {
 		
-		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
+		List<CardElement> inputDescriptions = new LinkedList<CardElement>();
 		
 		inputDescriptions.add(getDesciption());
 		return inputDescriptions ;
 	}
 	
 	@Override
-	public Collection<Input> inputs() {
-		Collection<Input> inputs = new LinkedList<Input>();
+	public List<Input> inputs() {
+		List<Input> inputs = new LinkedList<Input>();
 		inputs.add(this);
 		return inputs;
 	}

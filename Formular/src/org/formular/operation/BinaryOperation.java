@@ -1,13 +1,11 @@
 package org.formular.operation;
 
-import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.collections4.Transformer;
 import org.formular.card.CardElement;
-import org.formular.core.Input;
 import org.formular.core.IOperation;
+import org.formular.core.Input;
 
 public abstract class BinaryOperation extends AOperation {
 
@@ -45,19 +43,17 @@ public abstract class BinaryOperation extends AOperation {
 	}
 
 	@Override
-	public Collection <CardElement> inputDescriptions() {
-		return CollectionUtils.collect(inputs(),new Transformer<Input, CardElement>() {
-			@Override
-			public CardElement transform(Input input) {
-				return input.getDesciption();
-			}
-		});
-		
+	public List<CardElement> inputDescriptions() {
+		List<CardElement> ret = new LinkedList<CardElement>();
+		for (Input input: inputs()) {
+			ret.add(input.getDesciption());
+		}
+		return ret;
 	}
 	
 	@Override
-	public Collection<Input> inputs() {
-		Collection<Input> inputs = new LinkedList<Input>();
+	public List<Input> inputs() {
+		List<Input> inputs = new LinkedList<Input>();
 		if(right != null)
 			inputs.addAll(right.inputs());
 		if(left != null)

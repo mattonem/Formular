@@ -1,7 +1,7 @@
 package org.formular.operation;
 
-import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.formular.card.CardElement;
 import org.formular.core.IOperation;
@@ -24,7 +24,7 @@ public abstract class ParameterOperation extends AOperation {
 	}
 
 	@Override
-	public Collection<CardElement> inputDescriptions() {
+	public List<CardElement> inputDescriptions() {
 		return new LinkedList<CardElement>();
 	}
 
