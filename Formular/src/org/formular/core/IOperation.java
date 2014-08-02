@@ -3,7 +3,7 @@ package org.formular.core;
 import java.io.Serializable;
 import java.util.Collection;
 
-import org.formular.description.CardElement;
+import org.formular.description.DescriptionElement;
 import org.formular.operation.AOperationException;
 
 public interface IOperation extends Serializable {
@@ -22,7 +22,7 @@ public interface IOperation extends Serializable {
 	
 	public void setId(int id);
 	
-	public Collection <CardElement> inputDescriptions();
+	public Collection <DescriptionElement> inputDescriptions();
 	
 	public Collection<Input> inputs();
 

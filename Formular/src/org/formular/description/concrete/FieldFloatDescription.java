@@ -1,17 +1,18 @@
 package org.formular.description.concrete;
 
+import org.formular.description.FieldDescription;
 import org.formular.operation.concrete.UserParameter;
 
 import android.text.InputType;
 
-public class CardFieldFloat extends CardField {
+public class FieldFloatDescription extends FieldDescription {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public CardFieldFloat(UserParameter operation) {
+	public FieldFloatDescription(UserParameter operation) {
 		super(operation);
 	}
 

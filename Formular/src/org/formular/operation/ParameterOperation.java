@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.core.IOperation;
-import org.formular.description.CardElement;
+import org.formular.description.DescriptionElement;
 import org.formular.operation.exception.MissingArgument;
 
 
@@ -24,8 +24,8 @@ public abstract class ParameterOperation extends AOperation {
 	}
 
 	@Override
-	public Collection<CardElement> inputDescriptions() {
-		return new LinkedList<CardElement>();
+	public Collection<DescriptionElement> inputDescriptions() {
+		return new LinkedList<DescriptionElement>();
 	}
 
 	public void setValue(Float value) {

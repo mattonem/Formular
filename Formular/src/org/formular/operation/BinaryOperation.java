@@ -7,7 +7,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.Transformer;
 import org.formular.core.Input;
 import org.formular.core.IOperation;
-import org.formular.description.CardElement;
+import org.formular.description.DescriptionElement;
 
 public abstract class BinaryOperation extends AOperation {
 
@@ -45,10 +45,10 @@ public abstract class BinaryOperation extends AOperation {
 	}
 
 	@Override
-	public Collection <CardElement> inputDescriptions() {
-		return CollectionUtils.collect(inputs(),new Transformer<Input, CardElement>() {
+	public Collection <DescriptionElement> inputDescriptions() {
+		return CollectionUtils.collect(inputs(),new Transformer<Input, DescriptionElement>() {
 			@Override
-			public CardElement transform(Input input) {
+			public DescriptionElement transform(Input input) {
 				return input.getDesciption();
 			}
 		});

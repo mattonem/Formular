@@ -6,11 +6,11 @@ import java.util.Map.Entry;
 
 import org.formular.R;
 import org.formular.core.InputController;
-import org.formular.description.CardElement;
-import org.formular.description.CardElementVisitor;
-import org.formular.description.concrete.CardField;
-import org.formular.description.concrete.CardText;
-import org.formular.description.concrete.CardTitle;
+import org.formular.description.DescriptionElement;
+import org.formular.description.DescripitonVisitor;
+import org.formular.description.FieldDescription;
+import org.formular.description.concrete.TextDescription;
+import org.formular.description.concrete.TitleDescription;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -21,7 +21,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class CardSideFragment extends Fragment implements CardElementVisitor {
+public class CardSideFragment extends Fragment implements DescripitonVisitor {
 
 	protected HashMap<InputController, EditText> binding;
 
@@ -39,23 +39,23 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		((CardFragment) getParentFragment()).prepareFlipButton(getView());
 
-		LinkedList<CardElement> description = (LinkedList<CardElement>) getArguments()
+		LinkedList<DescriptionElement> description = (LinkedList<DescriptionElement>) getArguments()
 				.getSerializable("description");
 		if (description != null) {
-			for (CardElement cardElement : description) {
+			for (DescriptionElement cardElement : description) {
 				cardElement.accept(this);
 			}
 		}
 		super.onActivityCreated(savedInstanceState);
 	}
 
-	public void visit(CardTitle title) {
+	public void visit(TitleDescription title) {
 		TextView view = (TextView) getView().findViewById(R.id.title);
 		view.setText(title.getTitle());
 	}
 
 	@Override
-	public void visit(CardText cardText) {
+	public void visit(TextDescription cardText) {
 		LinearLayout layout = (LinearLayout) getView().findViewById(
 				R.id.linear_layout);
 		TextView view = new TextView(getActivity());
@@ -64,7 +64,7 @@ public class CardSideFragment extends Fragment implements CardElementVisitor {
 	}
 
 	@Override
-	public void visit(CardField cardNumberField) {
+	public void visit(FieldDescription cardNumberField) {
 		LinearLayout layout = new LinearLayout(getActivity());
 		layout.setOrientation(LinearLayout.VERTICAL);
 		LinearLayout rootLayout = (LinearLayout) getView().findViewById(

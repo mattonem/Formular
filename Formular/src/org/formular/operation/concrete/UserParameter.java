@@ -4,9 +4,9 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 import org.formular.core.Input;
-import org.formular.description.CardElement;
-import org.formular.description.concrete.CardField;
-import org.formular.description.concrete.CardFieldFloat;
+import org.formular.description.DescriptionElement;
+import org.formular.description.FieldDescription;
+import org.formular.description.concrete.FieldFloatDescription;
 import org.formular.operation.ParameterOperation;
 
 public class UserParameter extends ParameterOperation implements Input{
@@ -27,9 +27,9 @@ public class UserParameter extends ParameterOperation implements Input{
 	}
 
 	@Override
-	public Collection<CardElement> inputDescriptions() {
+	public Collection<DescriptionElement> inputDescriptions() {
 		
-		Collection<CardElement> inputDescriptions = new LinkedList<CardElement>();
+		Collection<DescriptionElement> inputDescriptions = new LinkedList<DescriptionElement>();
 		
 		inputDescriptions.add(getDesciption());
 		return inputDescriptions ;
@@ -54,8 +54,8 @@ public class UserParameter extends ParameterOperation implements Input{
 	}
 
 	@Override
-	public CardElement getDesciption() {
-		CardField cardNumberField = new CardFieldFloat(this);
+	public DescriptionElement getDesciption() {
+		FieldDescription cardNumberField = new FieldFloatDescription(this);
 		cardNumberField.setLabel(this.name);
 		return cardNumberField;
 	}
