@@ -3,7 +3,7 @@ package org.formular.core;
 import java.io.Serializable;
 import java.util.List;
 
-import org.formular.card.CardElement;
+import org.formular.description.DescriptionElement;
 import org.formular.operation.AOperationException;
 
 import android.os.Bundle;
@@ -24,7 +24,7 @@ public interface IOperation extends Serializable {
 	
 	public void setId(int id);
 	
-	public List<CardElement> inputDescriptions();
+	public List <DescriptionElement> inputDescriptions();
 	
 	public List<Input> inputs();
 

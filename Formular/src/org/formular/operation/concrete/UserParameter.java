@@ -3,10 +3,10 @@ package org.formular.operation.concrete;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.formular.card.CardElement;
-import org.formular.card.description.CardField;
-import org.formular.card.description.CardFieldFloat;
 import org.formular.core.Input;
+import org.formular.description.DescriptionElement;
+import org.formular.description.FieldDescription;
+import org.formular.description.concrete.FieldFloatDescription;
 import org.formular.operation.ParameterOperation;
 
 public class UserParameter extends ParameterOperation implements Input{
@@ -26,9 +26,9 @@ public class UserParameter extends ParameterOperation implements Input{
 	}
 
 	@Override
-	public List<CardElement> inputDescriptions() {
+	public List<DescriptionElement> inputDescriptions() {
 		
-		List<CardElement> inputDescriptions = new LinkedList<CardElement>();
+		List<DescriptionElement> inputDescriptions = new LinkedList<DescriptionElement>();
 		
 		inputDescriptions.add(getDesciption());
 		return inputDescriptions ;
@@ -42,8 +42,8 @@ public class UserParameter extends ParameterOperation implements Input{
 	}
 
 	@Override
-	public CardElement getDesciption() {
-		CardField cardNumberField = new CardFieldFloat(this);
+	public DescriptionElement getDesciption() {
+		FieldDescription cardNumberField = new FieldFloatDescription(this);
 		cardNumberField.setLabel(this.name);
 		return cardNumberField;
 	}

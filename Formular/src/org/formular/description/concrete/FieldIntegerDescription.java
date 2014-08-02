@@ -1,17 +1,18 @@
-package org.formular.card.description;
+package org.formular.description.concrete;
 
+import org.formular.description.FieldDescription;
 import org.formular.operation.concrete.UserParameter;
 
 import android.text.InputType;
 
-public class CardFieldFloat extends CardField {
+public class FieldIntegerDescription extends FieldDescription {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public CardFieldFloat(UserParameter operation) {
+	public FieldIntegerDescription(UserParameter operation) {
 		super(operation);
 	}
 
@@ -23,7 +24,7 @@ public class CardFieldFloat extends CardField {
 	@Override
 	public void setVal(String string) {
 		try {
-			operation.setVal(Float.parseFloat(string));
+			operation.setVal(Integer.parseInt(string));
 		} catch (NumberFormatException e) {
 			
 		}

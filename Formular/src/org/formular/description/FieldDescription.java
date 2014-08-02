@@ -1,14 +1,12 @@
-package org.formular.card.description;
+package org.formular.description;
 
-import org.formular.card.CardElement;
-import org.formular.card.CardElementVisitor;
 import org.formular.core.Input;
 import org.formular.core.InputController;
 import org.formular.operation.concrete.UserParameter;
 
 import android.text.InputType;
 
-public class CardField implements CardElement, InputController {
+public abstract class FieldDescription implements DescriptionElement, InputController {
 
 	/**
 	 * 
@@ -17,7 +15,7 @@ public class CardField implements CardElement, InputController {
 	private String label;
 	protected Input operation;
 
-	public CardField(UserParameter operation) {
+	public FieldDescription(UserParameter operation) {
 		this.operation = operation;
 	}
 
@@ -55,7 +53,7 @@ public class CardField implements CardElement, InputController {
 	}
 
 	@Override
-	public void accept(CardElementVisitor visitor) {
+	public void accept(DescripitonVisitor visitor) {
 		visitor.visit(this);
 	}
 

@@ -3,9 +3,9 @@ package org.formular.operation;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.formular.card.CardElement;
 import org.formular.core.IOperation;
 import org.formular.core.Input;
+import org.formular.description.DescriptionElement;
 
 public abstract class BinaryOperation extends AOperation {
 
@@ -39,8 +39,8 @@ public abstract class BinaryOperation extends AOperation {
 	}
 
 	@Override
-	public List<CardElement> inputDescriptions() {
-		List<CardElement> ret = new LinkedList<CardElement>();
+	public List <DescriptionElement> inputDescriptions() {
+		List<DescriptionElement> ret = new LinkedList<DescriptionElement>();
 		for (Input input: inputs()) {
 			ret.add(input.getDesciption());
 		}
