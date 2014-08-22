@@ -72,11 +72,5 @@ public abstract class BinaryOperation extends AOperation<Float> {
 		return ret;
 	}
 	
-	public void autoNameInputs() {
-		int i = 1;
-		for (Input input : this.inputs()) {
-			input.setName("input " + i);
-			i++;
-		}
-	}
+
 }
