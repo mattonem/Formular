@@ -12,11 +12,11 @@ import org.formular.description.concrete.TitleDescription;
 import android.os.Bundle;
 
 public class OperationAfficheur extends CardFragment {
-	private IOperation operation;
+	private IOperation<?> operation;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		operation = (IOperation) getArguments().getSerializable("operation");
+		operation = (IOperation<?>) getArguments().getSerializable("operation");
 		Bundle frontArguments = new Bundle();
 		Bundle backArguments = new Bundle();
 		LinkedList<DescriptionElement> frontDescription = new LinkedList<DescriptionElement>();

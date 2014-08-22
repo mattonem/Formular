@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 
 public class Formular extends Activity {
 
-	IOperation ope;
+	IOperation<?> ope;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
