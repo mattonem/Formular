@@ -57,14 +57,6 @@ public abstract class BinaryOperation extends AOperation {
 		return inputs;
 	}
 	
-	public void autoNameInputs() {
-		int i = 1;
-		for (Input input : this.inputs()) {
-			input.setName("input " + i);
-			i++;
-		}
-	};
-	
 	@Override
 	public void addOperand(IOperation operation) {
 		if (left == null) {
