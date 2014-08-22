@@ -7,19 +7,19 @@ import org.formular.core.IOperation;
 import org.formular.core.Input;
 import org.formular.description.DescriptionElement;
 
-public abstract class BinaryOperation extends AOperation {
+public abstract class BinaryOperation extends AOperation<Float> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public IOperation right;
-	public IOperation left;
-	public void right(IOperation operation2) {
+	public IOperation<Float> right;
+	public IOperation<Float> left;
+	public void right(IOperation<Float> operation2) {
 		right = operation2;	
 	}
 
-	public void left(IOperation operation1) {
+	public void left(IOperation<Float> operation1) {
 		left = operation1;
 	}
 
@@ -66,14 +66,15 @@ public abstract class BinaryOperation extends AOperation {
 	};
 	
 	@Override
-	public void addOperand(IOperation operation) {
+	public void addOperand(IOperation<?> operation) {
+		IOperation<Float> iOperation = ((IOperation<Float>) operation);
 		if (left == null) {
-			left = operation;
+			left = iOperation;
 			operation.setParent(this);
 			return;
 		}
 		if(right == null) {
-			right = operation;
+			right = iOperation;
 			operation.setParent(this);
 			return;
 		}

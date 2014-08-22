@@ -10,7 +10,7 @@ import org.formular.operation.exception.MissingArgument;
 import android.os.Bundle;
 
 
-public abstract class ParameterOperation extends AOperation {
+public abstract class ParameterOperation extends AOperation<Float> {
 
 	/**
 	 * 
@@ -47,7 +47,7 @@ public abstract class ParameterOperation extends AOperation {
 	
 
 	@Override
-	public float result() throws AOperationException {
+	public Float result() throws AOperationException {
 		if(value == null) 
 			throw new MissingArgument(this);
 		return value;
@@ -67,7 +67,7 @@ public abstract class ParameterOperation extends AOperation {
 	}
 	
 	@Override
-	public void addOperand(IOperation operation) {
+	public void addOperand(IOperation<?> operation) {
 		//do nothing
 	}
 

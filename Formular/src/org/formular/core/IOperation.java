@@ -8,17 +8,17 @@ import org.formular.operation.AOperationException;
 
 import android.os.Bundle;
 
-public interface IOperation extends Serializable {
+public interface IOperation<O> extends Serializable {
 	
 	
-	public abstract float result() throws AOperationException;
+	public abstract O result() throws AOperationException;
 	
 	public String getName();
 	public void setName(String name);
 	
-	public void addOperand(IOperation operation);
+	public void addOperand(IOperation<?> operation);
 	
-	public IOperation getRoot();
+	public IOperation<?> getRoot();
 	
 	public int getId();
 	
@@ -28,9 +28,9 @@ public interface IOperation extends Serializable {
 	
 	public List<Input> inputs();
 
-	public abstract void setParent(IOperation parent);
+	public abstract void setParent(IOperation<?> parent);
 
-	public abstract IOperation getParent();
+	public abstract IOperation<?> getParent();
 
 	public abstract void initalizeWith(Bundle bundle);
 	

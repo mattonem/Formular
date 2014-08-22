@@ -13,9 +13,9 @@ public class Somme extends BinaryOperation {
 	
 	
 	@Override
-	public float result() throws AOperationException {
+	public Float result() throws AOperationException {
 		if(right == null || left == null)
-			return 0;
+			return 0f;
 		return right.result() + left.result();
 	}
 
