@@ -25,14 +25,14 @@ public abstract class BinaryOperation extends AOperation<Float> {
 
 	
 
-	public IOperation right(Float i, Class<? extends ParameterOperation> class1) {
+	public IOperation<Float> right(Float i, Class<? extends ParameterOperation> class1) {
 		
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		this.right(newInstance);
 		return newInstance;
 	}
 
-	public IOperation left(Float i, Class<? extends ParameterOperation> class1) {
+	public IOperation<Float> left(Float i, Class<? extends ParameterOperation> class1) {
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		this.left(newInstance);
 		return newInstance;
