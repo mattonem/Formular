@@ -16,14 +16,12 @@ public abstract class BinaryOperator<I> extends AOperation<Boolean> {
 	public IOperation<I> right;
 	public IOperation<I> left;
 	
-	@Override
-	public List<Input> inputs() {
-		List<Input> inputs = new LinkedList<Input>();
-		if(right != null)
-			inputs.addAll(right.inputs());
-		if(left != null)
-			inputs.addAll(left.inputs());
-		return inputs;
+	public void right(IOperation<I> operation2) {
+		right = operation2;	
+	}
+
+	public void left(IOperation<I> operation1) {
+		left = operation1;
 	}
 	
 	@Override
@@ -40,15 +38,17 @@ public abstract class BinaryOperator<I> extends AOperation<Boolean> {
 			return;
 		}
 	}
-	
-	public void right(IOperation<I> operation2) {
-		right = operation2;	
+
+	@Override
+	public List<Input> inputs() {
+		List<Input> inputs = new LinkedList<Input>();
+		if(right != null)
+			inputs.addAll(right.inputs());
+		if(left != null)
+			inputs.addAll(left.inputs());
+		return inputs;
 	}
 
-	public void left(IOperation<I> operation1) {
-		left = operation1;
-	}
-	
 	@Override
 	public List <DescriptionElement> inputDescriptions() {
 		List<DescriptionElement> ret = new LinkedList<DescriptionElement>();

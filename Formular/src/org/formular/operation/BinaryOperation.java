@@ -39,33 +39,6 @@ public abstract class BinaryOperation extends AOperation<Float> {
 	}
 
 	@Override
-	public List <DescriptionElement> inputDescriptions() {
-		List<DescriptionElement> ret = new LinkedList<DescriptionElement>();
-		for (Input input: inputs()) {
-			ret.add(input.getDesciption());
-		}
-		return ret;
-	}
-	
-	@Override
-	public List<Input> inputs() {
-		List<Input> inputs = new LinkedList<Input>();
-		if(right != null)
-			inputs.addAll(right.inputs());
-		if(left != null)
-			inputs.addAll(left.inputs());
-		return inputs;
-	}
-	
-	public void autoNameInputs() {
-		int i = 1;
-		for (Input input : this.inputs()) {
-			input.setName("input " + i);
-			i++;
-		}
-	};
-	
-	@Override
 	public void addOperand(IOperation<?> operation) {
 		IOperation<Float> iOperation = ((IOperation<Float>) operation);
 		if (left == null) {
@@ -77,6 +50,33 @@ public abstract class BinaryOperation extends AOperation<Float> {
 			right = iOperation;
 			operation.setParent(this);
 			return;
+		}
+	}
+
+	@Override
+	public List<Input> inputs() {
+		List<Input> inputs = new LinkedList<Input>();
+		if(right != null)
+			inputs.addAll(right.inputs());
+		if(left != null)
+			inputs.addAll(left.inputs());
+		return inputs;
+	}
+
+	@Override
+	public List <DescriptionElement> inputDescriptions() {
+		List<DescriptionElement> ret = new LinkedList<DescriptionElement>();
+		for (Input input: inputs()) {
+			ret.add(input.getDesciption());
+		}
+		return ret;
+	}
+	
+	public void autoNameInputs() {
+		int i = 1;
+		for (Input input : this.inputs()) {
+			input.setName("input " + i);
+			i++;
 		}
 	}
 }
