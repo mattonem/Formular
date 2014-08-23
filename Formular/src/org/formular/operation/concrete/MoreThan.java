@@ -1,4 +1,7 @@
-package org.formular.operation;
+package org.formular.operation.concrete;
+
+import org.formular.operation.AOperationException;
+import org.formular.operation.BinaryOperator;
 
 public class MoreThan extends BinaryOperator<Float> {
 
