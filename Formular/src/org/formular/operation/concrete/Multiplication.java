@@ -11,7 +11,7 @@ public class Multiplication extends BinaryOperation {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public float result() throws AOperationException {
+	public Float result() throws AOperationException {
 		
 		return right.result() * left.result();
 	}

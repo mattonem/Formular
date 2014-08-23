@@ -13,9 +13,9 @@ public class TextDescription implements DescriptionElement {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private IOperation operation;
+	private IOperation<?> operation;
 
-	public TextDescription(IOperation operation) {
+	public TextDescription(IOperation<?> operation) {
 		this.operation = operation;
 	}
 
