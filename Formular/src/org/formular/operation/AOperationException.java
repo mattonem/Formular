@@ -1,4 +1,4 @@
-package org.formular.core;
+package org.formular.operation;
 
 public abstract class AOperationException extends Exception {
 

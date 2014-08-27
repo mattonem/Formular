@@ -2,30 +2,30 @@ package org.formular;
 
 import java.util.LinkedList;
 
-import org.formular.card.CardElement;
 import org.formular.card.CardFragment;
 import org.formular.card.CardSideFragment;
-import org.formular.card.description.CardText;
-import org.formular.card.description.CardTitle;
 import org.formular.core.IOperation;
+import org.formular.description.DescriptionElement;
+import org.formular.description.concrete.TextDescription;
+import org.formular.description.concrete.TitleDescription;
 
 import android.os.Bundle;
 
 public class OperationAfficheur extends CardFragment {
-	private IOperation operation;
+	private IOperation<?> operation;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		operation = (IOperation) getArguments().getSerializable("operation");
+		operation = (IOperation<?>) getArguments().getSerializable("operation");
 		Bundle frontArguments = new Bundle();
 		Bundle backArguments = new Bundle();
-		LinkedList<CardElement> frontDescription = new LinkedList<CardElement>();
-		LinkedList<CardElement> backDescription = new LinkedList<CardElement>();
+		LinkedList<DescriptionElement> frontDescription = new LinkedList<DescriptionElement>();
+		LinkedList<DescriptionElement> backDescription = new LinkedList<DescriptionElement>();
 		
-		frontDescription.add(new CardTitle(operation.getName()));
-		frontDescription.add(new CardText(operation));
+		frontDescription.add(new TitleDescription(operation.getName()));
+		frontDescription.add(new TextDescription(operation));
 		
-		backDescription.add(new CardTitle("Inputs"));
+		backDescription.add(new TitleDescription("Inputs"));
 		backDescription.addAll(operation.inputDescriptions());
 		
 		backArguments.putSerializable("description", backDescription);

@@ -1,14 +1,16 @@
 package org.formular.operation;
 
-import java.util.Collection;
 import java.util.LinkedList;
+import java.util.List;
 
-import org.formular.card.CardElement;
-import org.formular.core.AOperationException;
-import org.formular.core.MissingArgument;
+import org.formular.core.IOperation;
+import org.formular.description.DescriptionElement;
+import org.formular.operation.exception.MissingArgument;
+
+import android.os.Bundle;
 
 
-public abstract class ParameterOperation extends AOperation {
+public abstract class ParameterOperation extends AOperation<Float> {
 
 	/**
 	 * 
@@ -17,6 +19,17 @@ public abstract class ParameterOperation extends AOperation {
 	public Float value;
 	
 	
+	@Override
+	public void initalizeWith(Bundle bundle) {
+		try {
+			value = Float.valueOf(bundle.getString("value"));
+		} catch (NullPointerException e) {
+			value = null;
+		}
+		
+		super.initalizeWith(bundle);
+	}
+	
 	public ParameterOperation(){}
 	
 	public float getValue() {
@@ -24,8 +37,8 @@ public abstract class ParameterOperation extends AOperation {
 	}
 
 	@Override
-	public Collection<CardElement> inputDescriptions() {
-		return new LinkedList<CardElement>();
+	public List<DescriptionElement> inputDescriptions() {
+		return new LinkedList<DescriptionElement>();
 	}
 
 	public void setValue(Float value) {
@@ -34,7 +47,7 @@ public abstract class ParameterOperation extends AOperation {
 	
 
 	@Override
-	public float result() throws AOperationException {
+	public Float result() throws AOperationException {
 		if(value == null) 
 			throw new MissingArgument(this);
 		return value;
@@ -51,6 +64,11 @@ public abstract class ParameterOperation extends AOperation {
 		}
 		newInstance.setValue(i);
 		return newInstance;
+	}
+	
+	@Override
+	public void addOperand(IOperation<?> operation) {
+		//do nothing
 	}
 
 }

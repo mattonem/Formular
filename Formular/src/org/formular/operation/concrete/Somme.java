@@ -1,6 +1,6 @@
-package org.formular.operation.binary;
+package org.formular.operation.concrete;
 
-import org.formular.core.AOperationException;
+import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
 
 
@@ -13,9 +13,9 @@ public class Somme extends BinaryOperation {
 	
 	
 	@Override
-	public float result() throws AOperationException {
+	public Float result() throws AOperationException {
 		if(right == null || left == null)
-			return 0;
+			return 0f;
 		return right.result() + left.result();
 	}
 

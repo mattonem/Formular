@@ -1,17 +1,18 @@
-package org.formular.card.description;
+package org.formular.description.concrete;
 
-import org.formular.operation.parameter.UserParameter;
+import org.formular.description.FieldDescription;
+import org.formular.operation.concrete.UserParameter;
 
 import android.text.InputType;
 
-public class CardFieldInteger extends CardField {
+public class FieldIntegerDescription extends FieldDescription {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public CardFieldInteger(UserParameter operation) {
+	public FieldIntegerDescription(UserParameter operation) {
 		super(operation);
 	}
 

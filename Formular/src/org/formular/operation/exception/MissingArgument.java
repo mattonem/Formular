@@ -1,6 +1,8 @@
-package org.formular.core;
+package org.formular.operation.exception;
 
+import org.formular.operation.AOperationException;
 import org.formular.operation.ParameterOperation;
+
 
 public class MissingArgument extends AOperationException {
 	
