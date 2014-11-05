@@ -11,6 +11,7 @@ import org.formular.operation.concrete.Division;
 import org.formular.operation.concrete.FixedParameter;
 import org.formular.operation.concrete.Multiplication;
 import org.formular.operation.concrete.Puissance2;
+import org.formular.operation.concrete.PuissanceN;
 import org.formular.operation.concrete.Somme;
 import org.formular.operation.concrete.Soustraction;
 import org.formular.operation.exception.DivideByZero;
@@ -106,5 +107,11 @@ public class OperationTests extends TestCase {
 		 operation.operand(5f, FixedParameter.class);
 		 this.assertResult(operation, 25f);
 	}	
-	
+
+	public void testPuissanceN() {
+		 BinaryOperation operation = new PuissanceN();
+		 operation.right(3f, FixedParameter.class);
+		 operation.left(4f , FixedParameter.class);
+		 this.assertResult(operation, 64f);
+	}
 }
