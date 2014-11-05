@@ -56,10 +56,10 @@ public abstract class BinaryOperation extends AOperation<Float> {
 	@Override
 	public List<Input> inputs() {
 		List<Input> inputs = new LinkedList<Input>();
-		if(right != null)
-			inputs.addAll(right.inputs());
 		if(left != null)
 			inputs.addAll(left.inputs());
+		if(right != null)
+			inputs.addAll(right.inputs());
 		return inputs;
 	}
 

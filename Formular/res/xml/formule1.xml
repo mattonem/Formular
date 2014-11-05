@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Puissance2 id="1" name="puissance">
-    <UserParameter id="2" name="parameter1" />        
-</Puissance2>
+<PuissanceN id="1" name="puissance">
+    <UserParameter id="2" name="parameter1" />  
+    <UserParameter id="3" name="parameter2" />       
+</PuissanceN>
