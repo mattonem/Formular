@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MoreThan id="1" name="morethan1">
+<Puissance2 id="1" name="puissance">
     <UserParameter id="2" name="parameter1" />        
-	<FixedParameter id="3" name="fixed1" value="42.0"/>    
-</MoreThan>
+</Puissance2>

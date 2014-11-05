@@ -3,11 +3,14 @@ package org.formular.test;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
+import org.formular.core.IOperation;
 import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
+import org.formular.operation.UnaryOperation;
 import org.formular.operation.concrete.Division;
 import org.formular.operation.concrete.FixedParameter;
 import org.formular.operation.concrete.Multiplication;
+import org.formular.operation.concrete.Puissance2;
 import org.formular.operation.concrete.Somme;
 import org.formular.operation.concrete.Soustraction;
 import org.formular.operation.exception.DivideByZero;
@@ -88,7 +91,7 @@ public class OperationTests extends TestCase {
 		Assert.fail("Diviser par zero ne devrait pas etre possible");
 	}
 	
-	protected void assertResult(BinaryOperation operation, Float expected) {
+	protected void assertResult(IOperation<Float> operation, Float expected) {
 		try {
 			Assert.assertEquals(expected, operation.result());
 		} catch (AOperationException e) {
@@ -96,5 +99,12 @@ public class OperationTests extends TestCase {
 		}
 	}
 	
+	
+	
+	public void testPuissance2() {
+		 UnaryOperation operation = new Puissance2();
+		 operation.operand(5f, FixedParameter.class);
+		 this.assertResult(operation, 25f);
+	}	
 	
 }
