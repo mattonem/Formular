@@ -13,6 +13,7 @@ public abstract class BinaryOperator<I> extends AOperation<Boolean> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
 	public IOperation<I> right;
 	public IOperation<I> left;
 	
