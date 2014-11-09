@@ -4,7 +4,7 @@ import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
 import org.formular.operation.exception.DivideByZero;
 
-public class Division extends BinaryOperation {
+public class Division extends BinaryOperation<Float,Float> {
 
 	/**
 	 * 

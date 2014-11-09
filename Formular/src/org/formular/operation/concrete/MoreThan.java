@@ -1,9 +1,9 @@
 package org.formular.operation.concrete;
 
 import org.formular.operation.AOperationException;
-import org.formular.operation.BinaryOperator;
+import org.formular.operation.BinaryOperation;
 
-public class MoreThan extends BinaryOperator<Float> {
+public class MoreThan extends BinaryOperation<Float, Boolean> {
 
 	/**
 	 * 

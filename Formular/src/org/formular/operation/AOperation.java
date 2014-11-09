@@ -5,7 +5,7 @@ import org.formular.core.IOperation;
 import android.os.Bundle;
 
 
-public abstract class AOperation<O> implements IOperation<O> {
+public abstract class AOperation<I,O> implements IOperation<I,O> {
 
 	/**
 	 * 
@@ -16,7 +16,7 @@ public abstract class AOperation<O> implements IOperation<O> {
 	
 	public String name;
 	private int id;
-	private IOperation<?> parent;
+	private IOperation<O,?> parent;
 
 	@Override
 	public void initalizeWith(Bundle bundle) {
@@ -30,17 +30,17 @@ public abstract class AOperation<O> implements IOperation<O> {
 	}
 	
 	@Override
-	public void setParent(IOperation<?> parent) {
-		this.parent = parent;
+	public void setParent(IOperation<?,?> parent) {
+		this.parent = (IOperation<O, ?>) parent;
 	}
 	
 	@Override
-	public IOperation<?> getParent() {
+	public IOperation<?,?> getParent() {
 		return (parent == null )? this : parent;
 	}
 	
 	@Override
-	public IOperation<?> getRoot() {
+	public IOperation<?,?> getRoot() {
 		return (getParent() == this ) ? this : getParent().getRoot();
 	}
 

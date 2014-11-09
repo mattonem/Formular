@@ -10,19 +10,19 @@ import org.formular.operation.exception.MissingArgument;
 import android.os.Bundle;
 
 
-public abstract class ParameterOperation extends AOperation<Float> {
+public abstract class ParameterOperation<I> extends AOperation<I,I> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public Float value;
+	public I value;
 	
 	
 	@Override
 	public void initalizeWith(Bundle bundle) {
 		try {
-			value = Float.valueOf(bundle.getString("value"));
+			value = (I) Float.valueOf(bundle.getString("value"));
 		} catch (NullPointerException e) {
 			value = null;
 		}
@@ -32,7 +32,7 @@ public abstract class ParameterOperation extends AOperation<Float> {
 	
 	public ParameterOperation(){}
 	
-	public float getValue() {
+	public I getValue() {
 		return value;
 	}
 
@@ -41,13 +41,13 @@ public abstract class ParameterOperation extends AOperation<Float> {
 		return new LinkedList<DescriptionElement>();
 	}
 
-	public void setValue(Float value) {
+	public void setValue(I value) {
 		this.value = value;
 	}
 	
 
 	@Override
-	public Float result() throws AOperationException {
+	public I result() throws AOperationException {
 		if(value == null) 
 			throw new MissingArgument(this);
 		return value;
@@ -67,7 +67,7 @@ public abstract class ParameterOperation extends AOperation<Float> {
 	}
 	
 	@Override
-	public void addOperand(IOperation<?> operation) {
+	public void addOperand(IOperation<?,?> operation) {
 		//do nothing
 	}
 

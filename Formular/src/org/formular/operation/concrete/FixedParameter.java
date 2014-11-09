@@ -6,7 +6,7 @@ import java.util.List;
 import org.formular.core.Input;
 import org.formular.operation.ParameterOperation;
 
-public class FixedParameter extends ParameterOperation {
+public class FixedParameter extends ParameterOperation<Float> {
 
 	/**
 	 * 

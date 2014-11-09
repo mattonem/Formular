@@ -7,40 +7,40 @@ import org.formular.core.IOperation;
 import org.formular.core.Input;
 import org.formular.description.DescriptionElement;
 
-public abstract class BinaryOperation extends AOperation<Float> {
+public abstract class BinaryOperation<I,O> extends AOperation<I,O> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public IOperation<Float> right;
-	public IOperation<Float> left;
-	public void right(IOperation<Float> operation2) {
+	public IOperation<?,I> right;
+	public IOperation<?,I> left;
+	public void right(IOperation<?,I> operation2) {
 		right = operation2;	
 	}
 
-	public void left(IOperation<Float> operation1) {
+	public void left(IOperation<?,I> operation1) {
 		left = operation1;
 	}
 
 	
 
-	public IOperation<Float> right(Float i, Class<? extends ParameterOperation> class1) {
+	public IOperation<?,I> right(Float i, Class<? extends ParameterOperation> class1) {
 		
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		this.right(newInstance);
 		return newInstance;
 	}
 
-	public IOperation<Float> left(Float i, Class<? extends ParameterOperation> class1) {
+	public IOperation<?,I> left(Float i, Class<? extends ParameterOperation> class1) {
 		ParameterOperation newInstance = ParameterOperation.createParameter(i, class1);
 		this.left(newInstance);
 		return newInstance;
 	}
 
 	@Override
-	public void addOperand(IOperation<?> operation) {
-		IOperation<Float> iOperation = ((IOperation<Float>) operation);
+	public void addOperand(IOperation<?,?> operation) {
+		IOperation<?,I> iOperation = ((IOperation<?,I>) operation);
 		if (left == null) {
 			left = iOperation;
 			operation.setParent(this);
