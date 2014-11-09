@@ -6,9 +6,10 @@ import java.util.Map.Entry;
 
 import org.formular.R;
 import org.formular.core.InputController;
-import org.formular.description.DescriptionElement;
 import org.formular.description.DescripitonVisitor;
+import org.formular.description.DescriptionElement;
 import org.formular.description.FieldDescription;
+import org.formular.description.concrete.ListDescription;
 import org.formular.description.concrete.TextDescription;
 import org.formular.description.concrete.TitleDescription;
 
@@ -17,8 +18,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class CardSideFragment extends Fragment implements DescripitonVisitor {
@@ -92,6 +95,29 @@ public class CardSideFragment extends Fragment implements DescripitonVisitor {
 			input.setVal(string);
 		}
 		super.onDestroyView();
+	}
+
+	@Override
+	public void visit(ListDescription listDescription) {
+		LinearLayout layout = new LinearLayout(getActivity());
+		layout.setOrientation(LinearLayout.VERTICAL);
+		LinearLayout rootLayout = (LinearLayout) getView().findViewById(
+				R.id.linear_layout);
+		TextView view = new TextView(getActivity());
+		Spinner list = new Spinner(getActivity());
+		ArrayAdapter<Float> adapter = new ArrayAdapter<Float>(getActivity(), android.R.layout.simple_list_item_1, 
+				android.R.id.text1,  listDescription.getList());
+		
+		list.setAdapter(adapter);
+		
+		
+		view.setText(listDescription.getLabel());
+
+//		binding.put(listDescription, );
+
+		layout.addView(view);
+		layout.addView(list);
+		rootLayout.addView(layout);
 	}
 
 }

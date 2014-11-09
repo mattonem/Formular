@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PuissanceN id="1" name="puissance">
-    <UserParameter id="2" name="parameter1" />  
-    <UserParameter id="3" name="parameter2" />       
-</PuissanceN>
+<SimpleParameterList id="1" name="List1">
+<!--     <value id="2" value="2.1" />   -->
+<!--     <value id="3" value="3.1" />        -->
+</SimpleParameterList>

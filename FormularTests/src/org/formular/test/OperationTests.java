@@ -4,6 +4,7 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import org.formular.core.IOperation;
+import org.formular.core.ParameterList;
 import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
 import org.formular.operation.UnaryOperation;
@@ -12,6 +13,7 @@ import org.formular.operation.concrete.FixedParameter;
 import org.formular.operation.concrete.Multiplication;
 import org.formular.operation.concrete.Puissance2;
 import org.formular.operation.concrete.PuissanceN;
+import org.formular.operation.concrete.SimpleParameterList;
 import org.formular.operation.concrete.Somme;
 import org.formular.operation.concrete.Soustraction;
 import org.formular.operation.exception.DivideByZero;
@@ -113,5 +115,14 @@ public class OperationTests extends TestCase {
 		 operation.right(3f, FixedParameter.class);
 		 operation.left(4f , FixedParameter.class);
 		 this.assertResult(operation, 64f);
+	}
+	
+	public void testList() {
+		ParameterList<Float> list = new SimpleParameterList();
+		list.addItem(0,10f);
+		list.addItem(1,11f);
+		Assert.assertEquals(2, list.size());
+		list.select(0);
+		this.assertResult(list, 10f);
 	}
 }
