@@ -3,7 +3,7 @@ package org.formular.operation.concrete;
 import org.formular.operation.AOperationException;
 import org.formular.operation.UnaryOperation;
 
-public class Puissance2 extends UnaryOperation {
+public class Puissance2 extends UnaryOperation<Float,Float> {
 
 	/**
 	 * 

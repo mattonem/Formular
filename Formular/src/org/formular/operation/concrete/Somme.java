@@ -4,7 +4,7 @@ import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
 
 
-public class Somme extends BinaryOperation {
+public class Somme extends BinaryOperation<Float,Float> {
 
 	/**
 	 * 

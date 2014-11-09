@@ -9,7 +9,7 @@ import org.formular.description.FieldDescription;
 import org.formular.description.concrete.FieldFloatDescription;
 import org.formular.operation.ParameterOperation;
 
-public class UserParameter extends ParameterOperation implements Input{
+public class UserParameter extends ParameterOperation<Float> implements Input{
 	
 	/**
 	 * 

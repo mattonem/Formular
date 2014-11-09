@@ -19,7 +19,7 @@ import org.formular.operation.exception.DivideByZero;
 public class OperationTests extends TestCase {
 	
 	public void testSomme12() {
-		BinaryOperation operation = new Somme();
+		BinaryOperation<?,Float> operation = new Somme();
 		operation.right(1f, FixedParameter.class);
 		operation.left(2f, FixedParameter.class);
 		assertResult(operation, 3f);
@@ -28,22 +28,22 @@ public class OperationTests extends TestCase {
 	
 	
 	public void testSomme13() {
-		BinaryOperation operation = new Somme();
+		BinaryOperation<?,Float> operation = new Somme();
 		operation.right(1f, FixedParameter.class);
 		operation.left(3f, FixedParameter.class);
 		this.assertResult(operation, 4f);
 	}
 	
 	public void testSoustraction13() {
-		BinaryOperation operation = new Soustraction();
+		BinaryOperation<?,Float> operation = new Soustraction();
 		operation.right(1f, FixedParameter.class);
 		operation.left(3f, FixedParameter.class);
 		this.assertResult(operation, 2f);
 	}
 	
 	public void testComposition() {
-		BinaryOperation composition = new Soustraction();
-		BinaryOperation operation1 = new Soustraction();
+		BinaryOperation<Float,Float> composition = new Soustraction();
+		BinaryOperation<?,Float> operation1 = new Soustraction();
 		operation1.right(1f, FixedParameter.class);
 		operation1.left(3f, FixedParameter.class);
 		composition.left(operation1);
@@ -52,8 +52,8 @@ public class OperationTests extends TestCase {
 	}
 	
 	public void testComposition2() {
-		BinaryOperation composition = new Somme();
-		BinaryOperation operation1 = new Somme();
+		BinaryOperation<Float,Float> composition = new Somme();
+		BinaryOperation<?,Float> operation1 = new Somme();
 		operation1.right(2f, FixedParameter.class);
 		operation1.left(3f, FixedParameter.class);
 		composition.left(operation1);
@@ -62,21 +62,21 @@ public class OperationTests extends TestCase {
 	}
 	
 	public void testMultiplication() {
-		 BinaryOperation operation = new Multiplication();
+		 BinaryOperation<?,Float> operation = new Multiplication();
 		 operation.right(5f, FixedParameter.class);
 		 operation.left(2f , FixedParameter.class);
 		 this.assertResult(operation, 10f);
 	}
 	
 	public void testDivision() {
-		BinaryOperation operation = new Division();
+		BinaryOperation<?,Float> operation = new Division();
 		operation.left(4f, FixedParameter.class);
 		operation.right(2f, FixedParameter.class);
 		this.assertResult(operation,2f);
 	}
 	
 	public void testDivision2() {
-		BinaryOperation operation = new Division();
+		BinaryOperation<?,Float> operation = new Division();
 		operation.left(4f, FixedParameter.class);
 		operation.right(0f, FixedParameter.class);
 		try {
@@ -92,7 +92,7 @@ public class OperationTests extends TestCase {
 		Assert.fail("Diviser par zero ne devrait pas etre possible");
 	}
 	
-	protected void assertResult(IOperation<Float> operation, Float expected) {
+	protected void assertResult(IOperation<?,Float> operation, Float expected) {
 		try {
 			Assert.assertEquals(expected, operation.result());
 		} catch (AOperationException e) {
@@ -103,13 +103,13 @@ public class OperationTests extends TestCase {
 	
 	
 	public void testPuissance2() {
-		 UnaryOperation operation = new Puissance2();
+		 UnaryOperation<?,Float> operation = new Puissance2();
 		 operation.operand(5f, FixedParameter.class);
 		 this.assertResult(operation, 25f);
 	}	
 
 	public void testPuissanceN() {
-		 BinaryOperation operation = new PuissanceN();
+		 BinaryOperation<?,Float> operation = new PuissanceN();
 		 operation.right(3f, FixedParameter.class);
 		 operation.left(4f , FixedParameter.class);
 		 this.assertResult(operation, 64f);

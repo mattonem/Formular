@@ -7,19 +7,19 @@ import org.formular.core.IOperation;
 import org.formular.core.Input;
 import org.formular.description.DescriptionElement;
 
-public abstract class UnaryOperation extends AOperation<Float> {
+public abstract class UnaryOperation<I,O> extends AOperation<I,O> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public IOperation<Float> operand;
+	public IOperation<?,I> operand;
 
 
 
 	@Override
-	public void addOperand(IOperation<?> operation) {
-		this.operand((IOperation<Float>) operation);
+	public void addOperand(IOperation<?,?> operation) {
+		this.operand((IOperation<?,I>) operation);
 		operation.setParent(this);
 		
 	}
@@ -40,8 +40,8 @@ public abstract class UnaryOperation extends AOperation<Float> {
 		return ret;
 	}
 
-	public IOperation<Float> operand(Float f, Class<? extends ParameterOperation> class1) {
-		IOperation<Float> newInstance = ParameterOperation.createParameter(f, class1);
+	public IOperation<?,I> operand(Float f, Class<? extends ParameterOperation> class1) {
+		IOperation<?,I> newInstance = ParameterOperation.createParameter(f, class1);
 		this.operand(newInstance);
 		return newInstance;
 		
@@ -49,7 +49,7 @@ public abstract class UnaryOperation extends AOperation<Float> {
 
 
 
-	private void operand(IOperation<Float> newInstance) {
+	private void operand(IOperation<?,I> newInstance) {
 		operand = newInstance;
 	}
 

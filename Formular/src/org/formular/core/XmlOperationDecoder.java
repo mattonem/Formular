@@ -6,9 +6,9 @@ import android.util.Log;
 
 public class XmlOperationDecoder {
 
-	private static IOperation<?> _current;
+	private static IOperation<?,?> _current;
 	
-	public static IOperation<?> fromXML(XmlResourceParser xpp) throws OperationParsingException {
+	public static IOperation<?,?> fromXML(XmlResourceParser xpp) throws OperationParsingException {
 		_current = null;
 		try {
 			xpp.next();
@@ -17,8 +17,8 @@ public class XmlOperationDecoder {
 				String name = xpp.getName();
 				if (eventType == XmlResourceParser.START_TAG) {
 					log("Create " + name);
-					Class<IOperation<?>> cls = findClass(name);
-					IOperation<?> newInstance = cls.newInstance();
+					Class<IOperation<?,?>> cls = findClass(name);
+					IOperation<?,?> newInstance = cls.newInstance();
 					initializeIOperation(xpp, newInstance);
 
 					_current = newInstance;
@@ -40,7 +40,7 @@ public class XmlOperationDecoder {
 	}
 
 	private static void initializeIOperation(XmlResourceParser xpp,
-			IOperation<?> newInstance) {
+			IOperation<?,?> newInstance) {
 		if (_current != null) {
 			_current.addOperand(newInstance);
 		}
@@ -54,13 +54,13 @@ public class XmlOperationDecoder {
 	}
 
 	@SuppressWarnings("unchecked")
-	private static Class<IOperation<?>> findClass(String name)
+	private static Class<IOperation<?,?>> findClass(String name)
 			throws ClassNotFoundException {
-		Class<IOperation<?>> clazz;
+		Class<IOperation<?,?>> clazz;
 		try {
-			clazz = (Class<IOperation<?>>) Class.forName(name);
+			clazz = (Class<IOperation<?,?>>) Class.forName(name);
 		} catch (ClassNotFoundException e) {
-			clazz = (Class<IOperation<?>>) Class.forName("org.formular.operation.concrete." + name);
+			clazz = (Class<IOperation<?,?>>) Class.forName("org.formular.operation.concrete." + name);
 		}
 		return clazz;
 	};

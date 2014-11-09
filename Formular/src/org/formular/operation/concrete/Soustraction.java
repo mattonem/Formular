@@ -3,7 +3,7 @@ package org.formular.operation.concrete;
 import org.formular.operation.AOperationException;
 import org.formular.operation.BinaryOperation;
 
-public class Soustraction extends BinaryOperation {
+public class Soustraction extends BinaryOperation<Float,Float> {
 
 	/**
 	 * 
