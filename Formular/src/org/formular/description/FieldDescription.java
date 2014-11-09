@@ -44,7 +44,7 @@ public abstract class FieldDescription implements DescriptionElement, InputContr
 
 	@Override
 	public String getVal() {
-		Float val = operation.getVal();
+		Float val = (Float) operation.getVal();
 		return (val != null) ? val.toString() : ""; 
 	}
 
